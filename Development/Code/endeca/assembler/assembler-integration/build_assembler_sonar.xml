@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project name="sonar" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+
+
+        <!-- define needed properties incase not defined yet -->
+<!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
+<property name="sonar.jdbc.url" value="jdbc:mysql://62.48.80.197:3306/sonarqubelive?useUnicode=true&amp;characterEncoding=utf8" />
+<property name="sonar.jdbc.driverClassName" value="com.mysql.jdbc.Driver" />
+<property name="sonar.jdbc.username" value="sonar" />
+<property name="sonar.jdbc.password" value="sonar" />
+
+<!-- Define the SonarQube project properties -->
+<property name="sonar.core.codeCoveragePlugin" value="cobertura" />  
+<property name="sonar.java.coveragePlugin" value="cobertura" />
+<property name="sonar.dynamicAnalysis" value="reuseReports" />
+<property name="sonar.junit.reportsPath" value="${basedir}/testreportall" />
+<property name="sonar.cobertura.reportPath" value="${basedir}/coverageall/coverage.xml" />
+<property name="sonar.cobertura.reportsPath" value="${basedir}/coverageall/coverage.xml" />
+<property name="sonar.findbugs.timeout" value="2000000" />
+<property name="sonar.java.source" value="1.7" />
+<property name="sonar.scm.enabled" value="true" />
+<property name="sonar.host.url" value="https://cqc.tuitravelplc.com" />
+<property name="sonar.login" value="dh-analysis" />
+<property name="sonar.password" value="webhub.123" />
+<property name="sonar.projectKey" value="${sonar_key}" />
+<property name="sonar.projectName" value="${sonar_project}" />
+<property name="sonar.projectVersion" value="1.0" />
+<property name="sonar.language" value="java" />
+<property name="sonar.binaries" value="${basedir}/anite-api/target/classes,${basedir}/anite-impl/target/classes,${basedir}/cache-webapp/target/classes,${basedir}/search-api/target/classes,${basedir}/search-api-anite-impl/target/classes"/> 
+<property name="sonar.sources" value="${basedir}/anite-api/src/main/java,${basedir}/anite-impl/src/main/java,${basedir}/cache-webapp/src/main/java,${basedir}/search-api/src/main/java,${basedir}/search-api-anite-impl/src/main/java"/> 
+<property name="sonar.tests" value="${basedir}/anite-impl/src/test/java,${basedir}/cache-webapp/src/test/java,${basedir}/search-api-anite-impl/src/test/java"/> 
+<property name="sonar.verbose" value="false" />
+<property name="sonar.scm.enabled" value="true" />
+
+	<target name="sonar">
+		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+        		<classpath>
+				<pathelement location="${basedir}/lib/exclude/sonar-ant-task-2.3.jar"/>
+		        </classpath>
+		</taskdef>
+                                                                                                                                                                                         <!-- Execute the SonarQube analysis -->
+	        <sonar:sonar />
+	</target>
+
+</project>

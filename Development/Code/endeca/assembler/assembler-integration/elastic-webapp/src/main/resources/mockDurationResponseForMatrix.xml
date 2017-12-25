@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AvCache Version="4.22.2602" Node="10.78.23.27@0@0">
+	<!--sdate=2015-05-26&edate=2015-11-22&pax_ad=2&s_tp=2&rooms=1&h_tp=P&rm_1=1%2C2%2C3%2C4&p_tp=TP&stay=8%2C15%2C22%2C29&dep=ARN&pax_ch=2&pax_in=0&ch_age=3%2C5&accom=12690%7CS&accom_no=1 -->
+	<Status>
+		<Total Count="2" />
+	</Status>
+	<Result>
+		<Offers Count="2">
+			<Offer Stay="8" />
+			<Offer Stay="15" />
+		</Offers>
+	</Result>
+</AvCache>

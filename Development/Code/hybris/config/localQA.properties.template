@@ -1,0 +1,334 @@
+
+# place your custom properties into this file instead of modifying the project.properties
+# all properties in this file have higher priority and will overwrite the platform/project.properties settings.
+
+
+hac.webroot=/admin
+build.parallel=true
+
+#properties for configuring media and assets URLs and URL strategy start
+#media.legacy.prettyURL=true
+#media.replication.dirs=c:/media
+#media.read.dir=c:/media
+media.server.url=http://local.tui.com:9001/medias
+assets.server.context=http://local.tui.com:9001
+media.folder.root.url.strategy=tuiLocalMediaWebURLStrategy
+#properties for configuring media and assets URLs and URL strategy End
+
+media.server.url=http://local.tui.com:9001/medias
+media.folder.root.url.strategy=tuiLocalMediaWebURLStrategy
+impex.import.workers=4
+catalog.sync.workers=4
+##-- Apache tomcat (Hybris) Intrigation
+tomcat.jvm.route=devecom1
+
+#tomcat.generaloptions=
+tomcat.generaloptions=-Xmx2G -XX:MaxPermSize=300M -ea -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dorg.tanukisoftware.wrapper.WrapperManager.mbean=true -Djava.endorsed.dirs="%CATALINA_HOME%/lib/endorsed" -Dcatalina.base=%CATALINA_BASE% -Dcatalina.home=%CATALINA_HOME% -Dfile.encoding=UTF-8 -Dlog4j.configuration=log4j_init_tomcat.properties -Djava.util.logging.config.file=jdk_logging.properties -Djava.io.tmpdir="${HYBRIS_TEMP_DIR}" -Dspring.profiles.active="admin"
+
+##--Oracle Intrigation
+db.url=jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=tuinpdb0001)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=tuindb01)))
+db.driver=oracle.jdbc.driver.OracleDriver
+db.username=T4QHYBRIS
+db.password=T4QHYBRIS
+oracle.dataTS=DATA
+oracle.indexTS=INDX
+
+
+##--Oracle Intrigation
+#db.url=jdbc:oracle:thin:@delvmplltui07.sapient.com:1521:TUIDB
+#db.driver=oracle.jdbc.driver.OracleDriver
+#db.username=tuienv3
+#db.password=tuienv3
+#oracle.dataTS=DATA
+#oracle.indexTS=INDX
+
+
+# Sever Specific Configurations
+
+#clustermode=false
+#cluster.id=
+#cluster.maxid=
+#cluster.broadcast.methods=
+#cluster.broadcast.method.udp=
+#cluster.broadcast.method.udp.multicastaddress=
+#cluster.broadcast.method.udp.port=
+#cluster.broadcast.method.udp.networkinterface=
+
+#tomcat.generaloptions=
+#import catalog version
+import_catalog=BlueProductCatalog
+import_catalog.version=Staged
+
+#active catalog version
+active_catalog=Online
+build.parallel=
+
+#email properties
+emailservice.send.enabled=
+# Date to get the list of products updated before this data
+com.update.date=10-15-2013
+com.update.days=+1
+
+	
+
+ 
+
+#email properties
+emailservice.send.enabled=true
+#smtp deatils
+mail.smtp.server=delvmplmtui02.sapient.com
+mail.smtp.port=25
+mail.username=
+mail.password=
+
+
+# For debugging switching of LDAP
+
+log4j.logger.de.hybris.platform.ldap=debug
+log4j.logger.de.hybris.platform.ldap.connection=debug
+log4j.logger.de.hybris.platform.ldap.jalo=debug
+log4j.logger.de.hybris.platform.ldap.jaloimpl=debug
+log4j.logger.de.hybris.platform.ldap.impex=debug
+ 
+#ldap config
+
+ldap.server.type=LDAP
+ldap.server.url= 10.75.17.177:389
+ldap.server.root.dn= DC=nordic,DC=tuiad,DC=org
+ldap.jndi.principals=CN=AD Webcoe,OU=Service,OU=Users,OU=Resources,DC=nordic,DC=tuiad,DC=org
+ldap.jndi.credentials= 44!Smay10F
+ldap.jndi.factory=com.sun.jndi.ldap.LdapCtxFactory
+ldap.jndi.version=v3
+ldap.jndi.authentication=ActiveDirectory
+ldap.activedirectory.fastbind.enable=true
+ldap.pool.enabled=true;
+ldap.minimum.fail.backtime=90000
+ldap.pool.init.size=1
+ldap.pool.pref.size=10
+ldap.pool.maxsize=50
+
+# START PAGE STUFF START
+import.basedata=true
+import.testdata=true
+
+#tuiweb.essentialdata-impex-pattern=**/*.csv
+
+#Pattern for media placeholders
+media.placeholder=\\{media:(\\S*)\\}
+media.secure.placeholder=\\{secure:media:(\\S*)\\}
+media.pathPattern=/medias/([^>/]+)/(\\d+)(\\.)(\\w{3})
+site.assets.url = http://localhost:9001
+secure.site.assets.url = https://localhost:9001
+
+bigBanner.max.image.count=5
+
+
+## Free text Search data-suggest url
+
+data.suggest.url.lang.sv=http://www.fritidsresor.se/Pages/EpiserverFind.aspx
+searchDeatinationUrl.sv=http://www.fritidsresor.se/webbguiden/
+data.suggest.url.lang.no=http://www.startour.no/Pages/EpiserverFind.aspx
+searchDeatinationUrl.no=http://www.startour.no/hjelp/
+data.suggest.url.lang.fi=http://www.finnmatkat.fi/Pages/EpiserverFind.aspx
+searchDeatinationUrl.fi=http://www.finnmatkat.fi/haku/
+data.suggest.url.lang.da=http://www.startour.dk/Pages/EpiserverFind.aspx
+searchDeatinationUrl.da=http://www.startour.dk/infoguide/
+
+booking.widget.site.domain.sv=www.fritidsresor.se.tuinordic.com
+booking.widget.site.domain.da=www.startour.dk.tuinordic.com
+booking.widget.site.domain.fi=www.finnmatkat.fi.tuinordic.com
+booking.widget.site.domain.no=www.startour.no.tuinordic.com
+
+
+## LMS code
+
+lmscode=L
+source=lMS
+replyStatus=0
+
+## Date format for in LMS for getting departure list
+depDateFormat=yyyy-MM-dd'T'HH:mm:ssZ
+lastLmsUpdateDateFormat=yyyy-MM-dd'T'HH:mm:ssZ
+todate=100
+
+## Username and password for LMS
+
+username=
+password=
+
+## webservice properties for LMS
+lms.wsdlDocumentUrl=classpath:LMSOnlineHTTPSoapService.wsdl
+lms.endPointAddress=http://10.207.24.134:5070/LMSOnline/LMSOnlineSoapEndpoint1
+
+# START PAGE STUFF END
+
+
+#preview website URL
+preview.site.base.url=http://local.preview.tui.com:9001
+
+cockpit.default.useTestIds=true
+
+
+
+custom.page.prefix=
+build.development.mode=true
+
+#connection properties for jms in tuicoreint spring
+queue.jms.url=tcp://10.148.69.15:7222
+queue.jms.username=admin
+queue.jms.userpassword=
+queue.jms.destination=
+queue.jms.contentImages=testImages
+queue.apc.jms.destination=TUI.GERMANY.DEV.PIM.APC.IMPORT
+
+#connection properties for jms in nordicint spring for CSQ
+
+queue.csq.jms.destination=
+##connection properties for geography services
+#queue.geo.jms.url=tcp://10.148.69.15:7222
+#queue.geo.jms.username=admin
+#queue.geo.jms.userpassword=
+queue.geo.jms.destination=testGeo
+
+queue.jms.geo.destination=TUI.NORDIC.DEV.GEOSERVICE.PIM.GEODATA_IMPORT
+queue.jms.geo.timeout=15000
+#Catmaker Export Queue
+queue.catmaker.jms.destination.accommodation=TUI.NORDIC.DEV.PIM.CATMAKER.ACCOMMODATION.EXPORT
+queue.catmaker.jms.destination.location=TUI.NORDIC.DEV.PIM.CATMAKER.LOCATION.EXPORT
+queue.catmaker.jms.destination.baseaccommodation=TUI.NORDIC.DEV.PIM.CATMAKER.BASEACCOMMODATION.EXPORT
+
+TESTCASES_HOME=D:\\TUI\\SANDBOX\\sandbox_new\\sandbox\\Development\\Code\\hybris\\bin\\ext-custom\\nordicweb\\resources\\impex\\import\\junit\\
+
+cockpit.default.popUpEditor.allowOverlap=true
+
+
+# Fix for ignoring JMS Listener Warning messages
+log4j.logger.org.springframework.jms.listener=error
+enable.devicedetection=true
+site.config.url.blue.se=https?://local.tui.com.*,https?://local.tui.com:9001.*
+site.config.url.blue.dk=https?://local.tui.dk.*,https?://local.tui.dk:9001.*
+site.config.url.blue.no=https?://local.tui.no.*,https?://local.tui.no:9001.*
+site.config.url.blue.fi=https?://local.tui.fi.*,https?://local.tui.fi:9001.*
+
+site.config.url.blue.preview.se=https?://preview.tui.se.*,https?://preview.tui.se:9001.*
+site.config.url.blue.preview.dk=https?://preview.tui.dk.*,https?://preview.tui.dk:9001.*
+site.config.url.blue.preview.no=https?://preview.tui.no.*,https?://preview.tui.no:9001.*
+site.config.url.blue.preview.fi=https?://preview.tui.fi.*,https?://preview.tui.fi:9001.*
+
+site.config.url.blue.product.preview.se=http://preview.tui.se
+site.config.url.blue.product.preview.fi=http://preview.tui.fi
+site.config.url.blue.product.preview.dk=http://preview.tui.dk
+site.config.url.blue.product.preview.no=http://preview.tui.no
+
+
+##connection properties for jms in nordicint spring for SeasonalWeather Data
+
+queue.jms.seasonal.weather.queuename=TUI.NORDIC.DEV.CHEQQER.PIM.SEASONALDATA
+
+###Product Cockpit preview Configuration
+productcockpit.enable.preview.pages.stagedcatalog=true
+
+## apc error queue
+
+errorQueue.jms.destination=TUI.NORDIC.DEV.PIM.EXCEPTION
+
+##CSQ test file
+csq.test.pfile=D:\\TUIGIT\\sandbox\\Development\\Code\\hybris\\bin\\ext-custom\\nordicweb\\resources\\impex\\import\\junit\\xml\\csqP.xml
+csq.test.nfile=D:\\TUIGIT\\sandbox\\Development\\Code\\hybris\\bin\\ext-custom\\nordicweb\\resources\\impex\\import\\junit\\xml\\csqN.xml
+
+## Supress workflow
+tui.workflow.enable.status=false
+
+
+# Error page Configuration
+error.page.SE=/boka-resa/error/error
+error.page.NO=/bestill-reise/error/error
+error.page.FI=/varaa/error/error
+error.page.DK=/Bestil-rejse/error/error
+## tomcat access log
+tomcat.access.log=%{X-Forwarded-For}i %{Host}i %h %l %u %t %T %r %s %b %{User-Agent}i %{Referer}i %{JSESSIONID}c
+
+##Property added to switch off case senssitive search
+cockpit.search.advancedsearch.casesensitive=false
+
+# Country Specific Job Configuration
+catmakerexport.othercountries=true
+# CSS/JS compilation, concatenation, minification for development/production
+# true = development mode, false = production mode
+# defaults to false (production mode)
+grunt.development.mode=true
+
+queue.epc.jms.destination=TUI.NORDIC.DEV.TPG.PIM.EPC.IMPORT
+
+queue.edf.jms.destination=testedf
+
+
+##################################################################
+queue.jms.contentVideos=testVideos
+queue.jms.csqScore=csqueue
+
+tui.accommodation.price.service.url=http://10.202.24.147:8084/price/ 
+
+#url to get Accommodation Weather
+tui.accommodation.weather.service.url = http://10.202.24.147:8084/weather/
+#Number of days for Weather Forecast Prediction
+tui.accommodation.weather.forecast.display.days=4
+
+#url for dynammic rendering of pages for social sharing component
+isProd=false
+
+#url to get Accommodation Map Data
+tui.accommodation.map.service.url=http://10.202.24.142:8084/accomodation/coordinates/
+tui.accommodation.resort.service.url=http://10.202.24.142:8084/resort/coordinates/
+tui.accommodation.destination.service.url=http://10.202.24.142:8084/destination/coordinates/
+tui.accommodation.country.service.url=http://10.202.24.142:8084/country/coordinates/
+tui.map.image.format=290x100
+
+installed.tenants=
+####url for content api
+contentapi.media.host.domain.sv=http://api.fritidsresor.se.tuinordic.com
+contentapi.media.host.domain.no=http://api.startour.no.tuinordic.com
+contentapi.media.host.domain.dk=http://api.startour.dk.tuinordic.com
+contentapi.media.host.domain.fi=http://api.finnmatkakt.fi.tuinordic.com
+lms.offers.data.url=http://del2l65tui.sapient.com:9090/searchfiltersoffers?from-airport-code=all&to-airport-code=all&trip-length=all&country-code=
+lms.flights.data.url=http://del2l65tui.sapient.com:9090/searchfiltersflight?from-airport-code=all&to-airport-code=all&trip-length=all&country-code=
+hotel.card.pricing.data.url=http://del2l65tui.sapient.com:9090/hotelpricing
+unspecified.hotel.image.path=/assets/img/trips_n_offers/unspecified-hotelCard.jpg
+offer.card.filter.price.data.url=http://del2l65tui.sapient.com:9090/posthotelpricing
+scarlet.hotel.card.data.url=http://del2l65tui.sapient.com:9090/scarletlist
+hotel.card.breadcrumb.se=http://www.fritidsresor.se/resa
+hotel.card.breadcrumb.no=http://www.startour.no/feriereiser
+hotel.card.breadcrumb.dk=http://www.startour.dk/rejse
+hotel.card.breadcrumb.fi=http://www.finnmatkat.fi/lomakohde
+hotelcard.dateformat=dd MMMM yyyy
+lms.base.url = http://del2l65tui.sapient.com:9090/
+lms.search.flight.filter.url=searchfiltersflight
+lms.search.last.minute.flights.url=lastminuteflight
+lms.search.last.minute.offers.url=lastminuteoffers
+lms.search.offers.filter.url=searchfiltersoffers
+accommodation.lms.service=getmanualcard
+
+record.push.db.driver=oracle.jdbc.driver.OracleDriver
+record.push.db.url=jdbc:oracle:thin:@delvmplltui07.sapient.com:1521:tuidb
+record.push.db.username=TUIENV2TIBCOBW
+record.push.db.password=TUIENV2TIBCOBW
+
+queue.lms.pim.jms.destination=TUI.NORDIC.LMS.ACCOMODATION.IMPORT.TRIGGER
+queue.lms.pim.jms.url=tcp://del2l65TUI.sapient.com:7222
+queue.lms.pim.jms.username=admin
+queue.lms.pim.jms.password=admin
+
+################# EPC JMS Configuration #####################
+queue.epc.jms.url=tcp:// 10.148.69.15:7222
+
+## API URL's for the Unspecified results
+tui.accommodation.unspecified.service.url.se=http://api.fritidsresor.se.tuinordic.com/offers/packages/search/unspecified/?
+tui.accommodation.unspecified.service.url.dk=http://api.startour.dk.tuinordic.com/offers/packages/search/unspecified/?
+tui.accommodation.unspecified.service.url.no=http://api.startour.no.tuinordic.com/offers/packages/search/unspecified/?
+tui.accommodation.unspecified.service.url.fl=http://api.finnmatkakt.fi.tuinordic.com/offers/packages/search/unspecified/?
+
+## Connection properties for Unspecified Accommodation
+unspecified.server.connection.timeout=30000
+
+## DEV_MODE Check for Endeca & Unspecified
+dev_mode=false

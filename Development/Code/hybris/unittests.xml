@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<project name="run-unittests" default="unittests" basedir=".">
+
+	<property name="custom.extensions.directory" value="ext-custom"/>
+	<property name="platformhome" location="${basedir}/bin/platform"/>
+	<property file="${platformhome}/env.properties"/>
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="${platformhome}/lib/ant-contrib-1.0b3.jar" />
+	<taskdef file="${platformhome}/bootstrap/resources/ybootstrap.properties">
+		<classpath>
+			<pathelement path="${platformhome}/bootstrap/bin/ybootstrap.jar" />
+			<pathelement path="${platformhome}/bootstrap/bin/yant.jar" />
+			<fileset dir="${platformhome}/ext/core/lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${platformhome}/lib/dbdriver">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${platformhome}/lib">
+				<include name="*.jar" />
+			</fileset>
+			<fileset dir="${platformhome}/tomcat/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+	</taskdef>
+	<taskdef classname="de.hybris.ant.taskdefs.TestClassesUtilTask" name="testClassesUtil">
+		<classpath>
+			<pathelement path="${platformhome}/bootstrap/bin/yant.jar"/>
+			<pathelement path="${platformhome}/bootstrap/bin/ybootstrap.jar" />
+			<pathelement path="${platformhome}/bootstrap/bin/ytomcat.jar"/>
+			<fileset dir="${platformhome}/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${platformhome}/resources/ant/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${platformhome}/ext/core/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<fileset dir="${platformhome}/tomcat/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement path="${build.classpath}"/>
+		</classpath>
+	</taskdef>
+
+	<ysetplatformproperties/>
+
+	<target name="unittests">
+		<delete dir="${HYBRIS_LOG_DIR}/junit"/>
+		<mkdir dir="${HYBRIS_LOG_DIR}/junit"/>
+		<if>
+			<not>
+				<isset property="extensions"/>
+			</not>
+			<then>
+				<path id="extension.path">
+					<dirset dir="${platformhome}/../${custom.extensions.directory}">
+						<include name="*"/>
+					</dirset>
+				</path>
+				<pathconvert property="extensions" refid="extension.path" pathsep=",">
+					<mapper type="flatten"/>
+				</pathconvert>
+			</then>
+		</if>
+		<foreach list="${extensions}" delimiter="," target="unittestExtension" param="extension" parallel="false"/>
+	</target>
+
+	<target name="unittestExtension" if="extension">
+		<sequential>
+			<echo>Executing unittests for extension ${extension}</echo>
+
+			<testClassesUtil property="testlistCore" logging="true" annotations="unittests" extensions="${extension}" webTests="false"/>
+			<testClassesUtil property="testlistWeb" logging="false" annotations="unittests" extensions="${extension}" webTests="true"/>
+
+			<if>
+				<not>
+					<equals arg1="" arg2="${testlistCore}"/>
+				</not>
+				<then>
+					<echo file="${HYBRIS_TEMP_DIR}/testlistCore.txt">${testlistCore},</echo>
+					<replace file="${HYBRIS_TEMP_DIR}/testlistCore.txt" token="." value="/"/>
+					<replaceregexp file="${HYBRIS_TEMP_DIR}/testlistCore.txt" match="," replace=".class${line.separator}" flags="g"/>
+		
+					<runUnitTests baseDirectory="${HYBRIS_BIN_DIR}/${custom.extensions.directory}/${extension}/classes/"
+					              includeFile="${HYBRIS_TEMP_DIR}/testlistCore.txt"/>
+				</then>
+			</if>
+
+			<if>
+				<not>
+					<equals arg1="" arg2="${testlistWeb}"/>
+				</not>
+				<then>
+					<echo file="${HYBRIS_TEMP_DIR}/testlistWeb.txt">${testlistWeb},</echo>
+					<replace file="${HYBRIS_TEMP_DIR}/testlistWeb.txt" token="." value="/"/>
+					<replaceregexp file="${HYBRIS_TEMP_DIR}/testlistWeb.txt" match="," replace=".class${line.separator}" flags="g"/>
+		
+					<runUnitTests baseDirectory="${HYBRIS_BIN_DIR}/${custom.extensions.directory}/${extension}/web/testclasses/"
+					              includeFile="${HYBRIS_TEMP_DIR}/testlistWeb.txt"
+					              additionalClasspathClasses="${HYBRIS_BIN_DIR}/${custom.extensions.directory}/${extension}/web/webroot/WEB-INF/classes/"
+					              additionalClasspathJAR="${HYBRIS_BIN_DIR}/${custom.extensions.directory}/${extension}/web/webroot/WEB-INF/lib/"/>
+				</then>
+			</if>
+		</sequential>
+	</target>
+
+	<macrodef name="runUnitTests">
+		<attribute name="baseDirectory"/>
+		<attribute name="includeFile"/>
+		<attribute name="additionalClasspathJAR" default="someStrangeDefaultValue"/>
+		<attribute name="additionalClasspathClasses" default="someStrangeDefaultValue"/>
+
+		<sequential>
+			<junit printsummary="true" haltonerror="false" haltonfailure="false" reloading="false" showoutput="false" fork="true"
+			       forkMode="once">
+				<classpath>
+					<pathelement path="${platformhome}/bootstrap/bin/models.jar"/>
+					<fileset dir="${bundled.tomcat.home}/lib/">
+						<include name="*.jar"/>
+					</fileset>
+					<pathelement path="${platformhome}/ext/core/lib/log4j-1.2.16.jar"/>
+					<pathelement path="${bundled.tomcat.home}/bin/bootstrap.jar"/>
+					<pathelement path="${bundled.tomcat.home}/bin/commons-daemon.jar"/>
+					<pathelement path="${bundled.tomcat.home}/bin/tomcat-juli.jar"/>
+					<pathelement path="@{baseDirectory}"/>
+					<pathelement path="@{additionalClasspathClasses}"/>
+					<fileset dir="@{additionalClasspathJAR}" erroronmissingdir="false">
+						<include name="*.jar"/>
+					</fileset>
+					<pathelement path="${build.classpath}"/>
+				</classpath>
+				<syspropertyset>
+					<propertyref prefix="HYBRIS_"/>
+				</syspropertyset>
+		
+				<formatter type="xml"/>
+		
+				<batchtest todir="${HYBRIS_LOG_DIR}/junit/">
+					<fileset dir="@{baseDirectory}" includesfile="@{includeFile}"/>
+				</batchtest>
+			</junit>
+		</sequential>
+	</macrodef>
+
+</project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.1//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite3.1.dtd">
+<!-- Copyright (C) 2011 Endeca Technologies, Inc. The use of the source code 
+	in this file is subject to the ENDECA TECHNOLOGIES, INC. SOFTWARE TOOLS LICENSE 
+	AGREEMENT. The full text of the license agreement can be found in the ENDECA 
+	INFORMATION ACCESS PLATFORM THIRD-PARTY SOFTWARE USAGE AND LICENSES document 
+	included with this software distribution. -->
+<!-- Configuration file for UrlRewriteFilter http://tuckey.org/urlrewrite/ -->
+<urlrewrite>
+	<rule>
+		<from>^/dimensions(.*)$</from>
+		<to>/dimensions/$1</to>
+	</rule>
+
+	<rule>
+		<from>^/views/(.*?)\.js$</from>
+		<to>/WEB-INF/views/$1.js</to>
+	</rule>
+        
+        <rule>
+                <from>^/pages(.*)$</from>
+                <to>/request/pages/$1</to>
+        </rule>
+        
+	<outbound-rule encodefirst="true">
+		<note>Strip URL Session ID's</note>
+		<from>^(.*?)(?:\;jsessionid=[^\?#]*)?(\?[^#]*)?(#.*)?$</from>
+		<to>$1$2$3</to>
+	</outbound-rule>
+</urlrewrite>

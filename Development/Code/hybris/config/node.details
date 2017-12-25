@@ -1,0 +1,42 @@
+# Qa Env Nodes
+
+qa1=delvmpllTUI09.sapient.com
+qa2=delvmpllTUI10.sapient.com
+
+qaweb=delvmpllTUI08.sapient.com
+
+# Client Qa Env Nodes
+
+clientqa1=delvmpllTUI16.sapient.com
+clientqa2=delvmpllTUI17.sapient.com
+
+clientqaweb=delvmpllTUI15.sapient.com
+
+# UAT Env Nodes
+
+uat1=COEUATAS01.uat.tui.com
+uat2=COEUATAS02.uat.tui.com
+uat3=COEUATWI01.uat.tui.com
+
+uatweb=COEUATWE01.uat.tui.com
+
+# PERF Env Nodes
+
+perf1=delvmplltui22.sapient.com
+perf2=delvmplltui23.sapient.com
+perf3=delvmplltui24.sapient.com
+perf3=delvmplltui25.sapient.com
+
+perfweb=delvmplltui21sapient.com
+
+#PROD Env Nodes
+
+prod1=
+prod2=
+prod3=
+prod4=
+prod5=
+prod6=
+prod7=
+
+peodweb=

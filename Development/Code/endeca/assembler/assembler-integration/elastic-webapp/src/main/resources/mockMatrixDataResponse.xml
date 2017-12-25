@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AvCache Version="4.22.2602" Node="10.78.23.27@1@0">
+	<!--sdate=2015-05-26&edate=2015-11-22&pax_ad=2&s_tp=5&rooms=1&f=Y&h_tp=P&rm_1=1%2C2%2C3%2C4&p_tp=TP&stay=8&dep=ARN&pax_ch=2&pax_in=0&ch_age=3%2C5&accom=12690%7CS&accom_no=1 -->
+	<Status>
+		<Total Count="22" />
+	</Status>
+	<Result>
+		<Offers Count="22">
+			<Offer Date="2015-05-30" Stay="8" Price="16292.00" PricePP="4073.00" Pkg="ARNPMI6..150530 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-05-30" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="16292.00" PricePP="4073.00" DiscPP="-250.00" Disc="-1000.00" Board="RO" Avail="28">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="49">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150530STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-05-30" DepTime="0645" ArrPt="PMI" ArrDate="2015-05-30" ArrTime="1030" Avail="49"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-06" DepTime="1200" ArrPt="ARN" ArrDate="2015-06-06" ArrTime="1545" Avail="49"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-05-31" Stay="8" Price="13892.00" PricePP="3473.00" Pkg="ARNPMI7..150531 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-05-31" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="13892.00" PricePP="3473.00" DiscPP="-850.00" Disc="-3400.00" Board="RO" Avail="7">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="168">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150531STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-05-31" DepTime="1750" ArrPt="PMI" ArrDate="2015-05-31" ArrTime="2135" Avail="168"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-07" DepTime="2305" ArrPt="ARN" ArrDate="2015-06-08" ArrTime="0250" Avail="168"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-01" Stay="8" Price="16892.00" PricePP="4223.00" Pkg="ARNPMI1..150601 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-01" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="16892.00" PricePP="4223.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="11">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="40">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150601STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-01" DepTime="1725" ArrPt="PMI" ArrDate="2015-06-01" ArrTime="2110" Avail="40"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-08" DepTime="2220" ArrPt="ARN" ArrDate="2015-06-09" ArrTime="0205" Avail="40"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-06" Stay="8" Price="18292.00" PricePP="4573.00" Pkg="ARNPMI6..150606 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-06" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="18292.00" PricePP="4573.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="16">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="36">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150606STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-06" DepTime="0645" ArrPt="PMI" ArrDate="2015-06-06" ArrTime="1030" Avail="36"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-13" DepTime="1200" ArrPt="ARN" ArrDate="2015-06-13" ArrTime="1545" Avail="36"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-07" Stay="8" Price="14092.00" PricePP="3523.00" Pkg="ARNPMI7..150607 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-07" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="14092.00" PricePP="3523.00" DiscPP="-950.00" Disc="-3800.00" Board="RO" Avail="9">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="200">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150607STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-07" DepTime="1750" ArrPt="PMI" ArrDate="2015-06-07" ArrTime="2135" Avail="200"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-14" DepTime="2305" ArrPt="ARN" ArrDate="2015-06-15" ArrTime="0250" Avail="200"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-08" Stay="8" Price="17012.00" PricePP="4253.00" Pkg="ARNPMI1..150608 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-08" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0103  00280]]>
+					</SysInfo>
+					<Unit Code="C0103" Qty="1" Price="17012.00" PricePP="4253.00" DiscPP="-350.00" Disc="-1400.00" Board="RO" Avail="1">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0103 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="60">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150608STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-08" DepTime="1725" ArrPt="PMI" ArrDate="2015-06-08" ArrTime="2110" Avail="60"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-15" DepTime="2220" ArrPt="ARN" ArrDate="2015-06-16" ArrTime="0205" Avail="60"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-13" Stay="8" Price="21092.00" PricePP="5273.00" Pkg="ARNPMI6..150613 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-13" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="21092.00" PricePP="5273.00" DiscPP="-100.00" Disc="-400.00" Board="RO" Avail="45">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="34">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150613STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-13" DepTime="0645" ArrPt="PMI" ArrDate="2015-06-13" ArrTime="1030" Avail="34"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-20" DepTime="1200" ArrPt="ARN" ArrDate="2015-06-20" ArrTime="1545" Avail="34"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-14" Stay="8" Price="18992.00" PricePP="4748.00" Pkg="ARNPMI7..150614 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-14" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="18992.00" PricePP="4748.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="6">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="80">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150614STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-14" DepTime="1750" ArrPt="PMI" ArrDate="2015-06-14" ArrTime="2135" Avail="80"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-21" DepTime="2305" ArrPt="ARN" ArrDate="2015-06-22" ArrTime="0250" Avail="80"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-15" Stay="8" Price="20292.00" PricePP="5073.00" Pkg="ARNPMI1..150615 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-15" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="20292.00" PricePP="5073.00" DiscPP="-150.00" Disc="-600.00" Board="RO" Avail="12">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="68">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150615STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-15" DepTime="1725" ArrPt="PMI" ArrDate="2015-06-15" ArrTime="2110" Avail="68"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-22" DepTime="2320" ArrPt="ARN" ArrDate="2015-06-23" ArrTime="0305" Avail="68"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-20" Stay="8" Price="21692.00" PricePP="5423.00" Pkg="ARNPMI6..150620 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-20" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="21692.00" PricePP="5423.00" DiscPP="-250.00" Disc="-1000.00" Board="RO" Avail="50">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="64">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150620STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-20" DepTime="0645" ArrPt="PMI" ArrDate="2015-06-20" ArrTime="1030" Avail="64"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-27" DepTime="1200" ArrPt="ARN" ArrDate="2015-06-27" ArrTime="1545" Avail="64"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-21" Stay="8" Price="20792.00" PricePP="5198.00" Pkg="ARNPMI7..150621 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-21" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="20792.00" PricePP="5198.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="6">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="94">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150621STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-21" DepTime="1750" ArrPt="PMI" ArrDate="2015-06-21" ArrTime="2135" Avail="94"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-28" DepTime="2305" ArrPt="ARN" ArrDate="2015-06-29" ArrTime="0250" Avail="94"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-22" Stay="8" Price="22292.00" PricePP="5573.00" Pkg="ARNPMI1..150622 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-22" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="22292.00" PricePP="5573.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="8">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="27">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150622STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-22" DepTime="1825" ArrPt="PMI" ArrDate="2015-06-22" ArrTime="2210" Avail="27"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-06-29" DepTime="2320" ArrPt="ARN" ArrDate="2015-06-30" ArrTime="0305" Avail="27"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-27" Stay="8" Price="23092.00" PricePP="5773.00" Pkg="ARNPMI6..150627 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-27" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="23092.00" PricePP="5773.00" DiscPP="-250.00" Disc="-1000.00" Board="RO" Avail="48">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="73">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150627STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-27" DepTime="0645" ArrPt="PMI" ArrDate="2015-06-27" ArrTime="1030" Avail="73"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-04" DepTime="1200" ArrPt="ARN" ArrDate="2015-07-04" ArrTime="1545" Avail="73"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-28" Stay="8" Price="21592.00" PricePP="5398.00" Pkg="ARNPMI7..150628 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-28" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="21592.00" PricePP="5398.00" DiscPP="-600.00" Disc="-2400.00" Board="RO" Avail="8">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="185">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150628STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-28" DepTime="1750" ArrPt="PMI" ArrDate="2015-06-28" ArrTime="2135" Avail="185"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-05" DepTime="2305" ArrPt="ARN" ArrDate="2015-07-06" ArrTime="0250" Avail="185"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-29" Stay="8" Price="23692.00" PricePP="5923.00" Pkg="ARNPMI1..150629 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-29" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="23692.00" PricePP="5923.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="9">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="102">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150629STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-29" DepTime="1825" ArrPt="PMI" ArrDate="2015-06-29" ArrTime="2210" Avail="102"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-06" DepTime="2320" ArrPt="ARN" ArrDate="2015-07-07" ArrTime="0305" Avail="102"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-06-30" Stay="8" Price="26492.00" PricePP="6623.00" Pkg="ARNPMI2..150630 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-06-30" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="26492.00" PricePP="6623.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="1">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="9">
+					<SysInfo>
+						<![CDATA[ -0008TIPMIARNPMI2..JTG735 150630STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-06-30" DepTime="1205" ArrPt="PMI" ArrDate="2015-06-30" ArrTime="1550" Avail="9"
+						FltNo="JTG735" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-07" DepTime="1650" ArrPt="ARN" ArrDate="2015-07-07" ArrTime="2035" Avail="9"
+						FltNo="JTG736" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-04" Stay="8" Price="26092.00" PricePP="6523.00" Pkg="ARNPMI6..150704 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-04" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="26092.00" PricePP="6523.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="28">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="82">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150704STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-04" DepTime="0645" ArrPt="PMI" ArrDate="2015-07-04" ArrTime="1030" Avail="82"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-11" DepTime="1200" ArrPt="ARN" ArrDate="2015-07-11" ArrTime="1545" Avail="82"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-05" Stay="8" Price="22992.00" PricePP="5748.00" Pkg="ARNPMI7..150705 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-05" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="22992.00" PricePP="5748.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="3">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="208">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150705STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-05" DepTime="1750" ArrPt="PMI" ArrDate="2015-07-05" ArrTime="2135" Avail="208"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-12" DepTime="2305" ArrPt="ARN" ArrDate="2015-07-13" ArrTime="0250" Avail="208"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-06" Stay="8" Price="22292.00" PricePP="5573.00" Pkg="ARNPMI1..150706 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-06" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="22292.00" PricePP="5573.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="1">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="91">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150706STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-06" DepTime="1825" ArrPt="PMI" ArrDate="2015-07-06" ArrTime="2210" Avail="91"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-13" DepTime="2320" ArrPt="ARN" ArrDate="2015-07-14" ArrTime="0305" Avail="91"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-11" Stay="8" Price="24892.00" PricePP="6223.00" Pkg="ARNPMI6..150711 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-11" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="24892.00" PricePP="6223.00" DiscPP="0.00" Disc="0.00" Board="RO" Avail="32">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="132">
+					<SysInfo>
+						<![CDATA[ -0008LOPMIARNPMI6..BLX155 150711STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-11" DepTime="0645" ArrPt="PMI" ArrDate="2015-07-11" ArrTime="1030" Avail="132"
+						FltNo="BLX155" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-18" DepTime="1200" ArrPt="ARN" ArrDate="2015-07-18" ArrTime="1545" Avail="132"
+						FltNo="BLX156" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-12" Stay="8" Price="22992.00" PricePP="5748.00" Pkg="ARNPMI7..150712 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-12" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="22992.00" PricePP="5748.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="4">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="238">
+					<SysInfo>
+						<![CDATA[ -0008SOPMIARNPMI7..BLX143 150712STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-12" DepTime="1750" ArrPt="PMI" ArrDate="2015-07-12" ArrTime="2135" Avail="238"
+						FltNo="BLX143" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-19" DepTime="2305" ArrPt="ARN" ArrDate="2015-07-20" ArrTime="0250" Avail="238"
+						FltNo="BLX144" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-07-13" Stay="8" Price="21492.00" PricePP="5373.00" Pkg="ARNPMI1..150713 08 STOPMIS" Deposit="0.00"
+				WorldCare="Y">
+				<Accom Date="2015-07-13" Stay="8" Id="12690" Code="ALCPOA" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[3519-00ALCPOA NO222 00000C0101  00000]]>
+					</SysInfo>
+					<Unit Code="C0101" Qty="1" Price="21492.00" PricePP="5373.00" DiscPP="-400.00" Disc="-1600.00" Board="RO" Avail="1">
+						<SysInfo>
+							<![CDATA[00ALCPOA22C0101 00000 2            ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="2" In="0" />
+						<Occ Ad="2" Yth="0" Ch="2" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="3" />
+							<Pax Id="4" Age="5" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="86">
+					<SysInfo>
+						<![CDATA[ -0008MAPMIARNPMI1..BLX121 150713STO F                                 1 A ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2015-07-13" DepTime="1825" ArrPt="PMI" ArrDate="2015-07-13" ArrTime="2210" Avail="86"
+						FltNo="BLX121" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="PMI" DepDate="2015-07-20" DepTime="2320" ArrPt="ARN" ArrDate="2015-07-21" ArrTime="0305" Avail="86"
+						FltNo="BLX122" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Facets>
+				<Cat Code="CR0001">
+					<Facet Code="CR01" Count="1" Min="8.4" Max="8.4" />
+				</Cat>
+				<Cat Code="FC0001">
+					<Facet Code="0026" Count="1" />
+					<Facet Code="0028" Count="1" />
+					<Facet Code="0078" Count="1" />
+					<Facet Code="0198" Count="1" />
+					<Facet Code="0215" Count="1" />
+					<Facet Code="0477" Count="1" />
+					<Facet Code="0003" Count="1" />
+					<Facet Code="0047" Count="1" />
+					<Facet Code="0246" Count="1" />
+				</Cat>
+				<Cat Code="HR0001">
+					<Facet Code="HR01" Count="1" Min="4.0" Max="4.0" />
+				</Cat>
+			</Facets>
+			<Lists>
+				<Board>RO</Board>
+				<DepPt>ARN</DepPt>
+				<OutSlots>A,B,C</OutSlots>
+				<InSlots>B,D</InSlots>
+				<Price>13892.00,26492.00</Price>
+				<PricePP>3473.00,6623.00</PricePP>
+				<DreamLiner>N</DreamLiner>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

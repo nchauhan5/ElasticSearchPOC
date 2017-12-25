@@ -1,0 +1,4 @@
+spring.profiles.active=mockjms
+# excluding these clustered nodes from polling tasks (admin + cronjob nodes (on production))
+task.excluded.cluster.ids=0,1,21,22,31
+cronjob.timertask.loadonstartup=false

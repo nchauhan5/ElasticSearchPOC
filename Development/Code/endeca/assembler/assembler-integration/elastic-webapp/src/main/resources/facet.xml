@@ -1,0 +1,109 @@
+<AvCache Version="4.5.2121" Node="213.146.183.139@0@0">
+	<!-- sdate=2015-04-10&edate=2015-10-10&pax_ad=3&s_tp=3&h_tp=P&p_tp=TP&prom_no=1&prom=FC&stay=8,15,22&dep=STO,CPH,GOT&pax_ch=0&pax_in=0&ch_age=&accom=000003424|S,000008369|S,000008324|S,00000004|S,000012757|S,000000578|S,000008247|S,000053738|S,00000158|S,000054196|S,000000438|S,00000103|S,000009384|S,000009387|S,000002846|S,000003758|S,00000192|S,00000124|S,000000434|S,00000233|S&accom_no=20 -->
+	<Status>
+		<Total Count="10" />
+	</Status>
+	<Result>
+		<Offers Count="10">
+			<Offer Date="2015-05-01" Stay="8" Price="17884.00" PricePP="5961.00" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2015-05-01" Stay="8" Id="9009" Code="FT000F" Brand="S" CommPri="0" SysInfo="00FTBSEB SUDR1 00000C0101 00420">
+					<Unit Code="C01051" Qty="1" Price="17884.00" PricePP="5961.00" DiscPP="0.00" Disc="0.00" Board="BB" Avail="1"
+						SysInfo="00FTBSEBDRC0101 00000 1">
+						<Priced Ad="3" Yth="0" Ch="0" In="0" />
+						<Occ Ad="3" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+							<Pax Id="3" Age="30" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="135" SysInfo="0008 LCAARNLCA5..BLX633 150501STO F 1 A">
+					<Route Id="1" DepPt="ARN" DepDate="2015-05-01" DepTime="1830" ArrPt="LCA" ArrDate="2015-05-01" ArrTime="2350" Avail="135"
+						FltNo="BLX633" Meal="Y" />
+					<Route Id="2" DepPt="LCA" DepDate="2015-05-08" DepTime="1355" ArrPt="ARN" ArrDate="2015-05-08" ArrTime="1705" Avail="135"
+						FltNo="BLX634" Meal="Y" />
+				</Transport>
+			</Offer>			
+			<Facets>
+				<Cat Code="FT000F">
+					<Facet Code="AF0001" Count="277" Min="1.0" Max="5.0"/>
+				</Cat>
+				<Cat Code="STF1">
+					<Facet Code="LST1" Count="69"/>
+					<Facet Code="ST3" Count="189"/>
+					<Facet Code="STF11" Count="205"/>
+					<Facet Code="STF7" Count="42"/>
+				</Cat>
+				<Cat Code="ST41">
+					<Facet Code="ST14" Count="93"/>
+					<Facet Code="ST4" Count="32"/>
+					<Facet Code="ST37" Count="80"/>
+					<Facet Code="LST28" Count="30"/>
+				</Cat>
+				<Cat Code="AF0002">
+					<Facet Code="ST18" Count="40"/>
+					<Facet Code="ST23" Count="166"/>
+					<Facet Code="STP8" Count="353"/>
+					<Facet Code="STP6" Count="8"/>
+				</Cat>
+				<Cat Code="STP11">
+					<Facet Code="ST11" Count="35"/>
+					<Facet Code="ST25" Count="28"/>
+					<Facet Code="ST42" Count="95"/>
+					<Facet Code="ST29" Count="133"/>
+					<Facet Code="LST11" Count="33"/>
+					<Facet Code="STS3" Count="33"/>
+					<Facet Code="ST26" Count="72"/>
+					<Facet Code="ST35" Count="28"/>
+					<Facet Code="ST13" Count="6"/>
+					<Facet Code="ST9" Count="2"/>
+					<Facet Code="ST39" Count="1"/>
+					<Facet Code="ST41" Count="3"/>
+				</Cat>
+				<Cat Code="BRAND">
+					<Facet Code="P00057" Count="38"/>
+					<Facet Code="P00053" Count="54"/>
+					<Facet Code="Beach" Count="20"/>
+					<Facet Code="P00052" Count="39"/>
+					<Facet Code="P00059" Count="100"/>
+					<Facet Code="P00050" Count="57"/>
+					<Facet Code="P00056" Count="73"/>
+					<Facet Code="P00055" Count="7"/>
+					<Facet Code="P00058" Count="6"/>
+					<Facet Code="P00060" Count="8"/>
+				</Cat>
+				<Cat Code="FT000O">
+					<Facet Code="ST20" Count="149"/>
+					<Facet Code="STO2" Count="101"/>
+					<Facet Code="STO7" Count="85"/>
+					<Facet Code="ST20A" Count="2"/>
+					<Facet Code="ST6" Count="4"/>
+				</Cat>
+				<Cat Code="FT000E">
+					<Facet Code="ST8" Count="116"/>
+					<Facet Code="LST51" Count="21"/>
+					<Facet Code="ST22" Count="68"/>
+					<Facet Code="ST7" Count="9"/>
+					<Facet Code="STE1" Count="1"/>
+				</Cat>
+				<Cat Code="AF0004">
+					<Facet Code="AF0004" Count="4" Min="9.0" Max="10.0"/>
+				</Cat>
+				<Cat Code="FT000K">
+					<Facet Code="STK002" Count="37"/>
+					<Facet Code="STK007" Count="35"/>
+					<Facet Code="STK012" Count="49"/>
+				</Cat>
+			</Facets>
+			<Lists>
+				<Board>RO,BB,HB,AI</Board>
+				<DepPt>STO,CPH,GOT</DepPt>
+				<OutSlots>A,B,C</OutSlots>
+				<InSlots>A,B,D</InSlots>
+				<Price>12954.00,26639.00</Price>
+				<PricePP>4318.00,8879.00</PricePP>
+				<DreamLiner>N</DreamLiner>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

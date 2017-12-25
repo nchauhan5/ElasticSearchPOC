@@ -1,0 +1,78 @@
+<AvCache Version="1.0">
+	<Status>
+		<Total Count="1"/>
+	</Status>
+	<Result>
+		<Offers Count="1">
+			<Offer Date="2012-08-10" Stay="7" Price="1200" PricePP="200" Deposit="120" CoachTransfer="Y" CarHire="Y" WorldCare="Y">
+				<Accom Date="2012-08-10" Stay="7" Id="ABC12345FCHMS" Code="" Rating="2" CommPri="783" Tracs="LGWPMI12345">
+					<Unit Code="FAM01" Qty="1" Price="800" PricePP="200" Disc="0" DiscPP="0" Board="BB" Avail="7" Dc="Y" Tracs="LGWPMI12345">
+						<Priced Ad="4" Ch="2" In="0"/>
+						<Occ Ad="2" Ch="2" In="0">
+							<Pax Id="1"/>
+							<Pax Id="2"/>
+							<Pax Id="3"/>
+							<Pax Id="4"/>
+						</Occ>
+					</Unit>
+					<Unit Code="DBL01" Qty="1" Price="400" PricePP="200" Disc="0" DiscPP="0" Board="BB" Avail="7" Dc="Y" Tracs="LGWPMI12346">
+						<Priced Ad="2" Ch="0" In="0"/>
+						<Occ Ad="2" Ch="0" In="0">
+							<Pax Id="5"/>
+							<Pax Id="6"/>
+						</Occ>
+					</Unit>
+					<AltBoards>
+						<Board Code="HB" Price="1400"/>
+					</AltBoards>
+					<AllBoards>BB,HB,FB,AI</AllBoards>
+				</Accom>
+				<Transport MinAvail="2">
+					<Route Id="1" DepPt="LGW" DepDate="2012-08-10" DepTime="1250" ArrPt="PMI" ArrDate="2012-08-10" ArrTime="1450" Avail="2" FltNum="TOM1235" Equip="A320" Dreamliner="Y" Meal="Y"/>
+					<Route Id="2" DepPt="PMI" DepDate="2012-08-17" DepTime="2030" ArrPt="LGW" ArrDate="2012-08-17" ArrTime="2230" Avail="2" FltNum="TOM1236" Equip="787" Meal="Y"/>
+				</Transport>
+			</Offer>
+			<Offer Date="2012-08-10" Stay="7" Price="120" PricePP="300" Deposit="120" CoachTransfer="Y" CarHire="Y" WorldCare="Y">
+				<Accom Date="2012-08-10" Stay="7" Id="ABC12345FCHMA" Code="" Rating="2" CommPri="783" Tracs="LGWPMI12345">
+					<Unit Code="FAM01" Qty="1" Price="1200" PricePP="300" Disc="0" DiscPP="0" Board="BB" Avail="7" Dc="Y" Tracs="LGWPMI12348">
+						<Priced Ad="4" Ch="2" In="0"/>
+						<Occ Ad="2" Ch="2" In="0">
+							<Pax Id="1"/>
+							<Pax Id="2"/>
+							<Pax Id="3"/>
+							<Pax Id="4"/>
+						</Occ>
+					</Unit>
+					<Unit Code="DBL01" Qty="1" Price="600" PricePP="300" Disc="0" DiscPP="0" Board="BB" Avail="7" Dc="Y" Tracs="LGWPMI12349">
+						<Priced Ad="2" Ch="0" In="0"/>
+						<Occ Ad="2" Ch="0" In="0">
+							<Pax Id="5"/>
+							<Pax Id="6"/>
+						</Occ>
+					</Unit>
+					<AltBoards>
+						<Board Code="HB" Price="1400"/>
+					</AltBoards>
+					<AllBoards>BB,HB,FB,AI</AllBoards>
+				</Accom>
+				<Transport MinAvail="2">
+					<Route Id="1" DepPt="LGW" DepDate="2012-08-10" DepTime="0850" ArrPt="PMI" ArrDate="2012-08-10" ArrTime="1050" Avail="2" FltNum="TOM1238" Equip="A320" Dreamliner="Y" Meal="Y"/>
+					<Route Id="2" DepPt="PMI" DepDate="2012-08-17" DepTime="1830" ArrPt="LGW" ArrDate="2012-08-17" ArrTime="1830" Avail="2" FltNum="TOM1239" Equip="787" Dreamliner="Y" Meal="Y"/>
+				</Transport>
+			</Offer>
+			<Facets>
+				<Cat Code="TMP">
+					<Facet Code="HIGH" Count="2" Min="10.0" Max="30.0"/>
+				</Cat>
+			</Facets>
+			<Lists>
+				<DreamLiner>Y</DreamLiner>
+				<Boards>BB,HB,FB,AI</Boards>
+				<OutSlots>A,B</OutSlots>
+				<InSlots>A,C</InSlots>
+				<DepPt>LGW,STN</DepPt>
+				<Disc>10P,FB4HB</Disc>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

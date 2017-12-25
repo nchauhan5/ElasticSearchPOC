@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<project name="setup" default="setup">
+
+	<property name="sandbox" location="${basedir}/../../.."/>
+	<property name="hybris.version" value="5.3"/>
+	<property name="download.dir" location="${user.home}/Downloads"/>
+	<property environment="env"/>
+	<condition property="java7">
+		<equals arg1="${ant.java.version}" arg2="1.7" forcestring="true"/>
+	</condition>
+
+	<target name="copyHybris" description="Extract Hybris from a zip file downloaded before.">
+		<pathconvert property="hybris.zip.files" pathsep="${line.separator}">
+			<fileset dir="${download.dir}">
+				<include name="hybris-commerce-suite-${hybris.version}*.zip"/>
+			</fileset>
+			<map from="${basedir}${file.separator}" to=""/>
+		</pathconvert>
+		<loadresource property="hybris.zip.default">
+			<string value="${hybris.zip.files}"/>
+			<filterchain>
+				<headfilter lines="1"/>
+			</filterchain>
+		</loadresource>
+		<input
+				message="Please enter downloaded Hybris commerce suite ${hybris.version} zip file:"
+				addproperty="hybris.zip"
+				defaultvalue="${hybris.zip.default}"
+				/>
+		<unzip dest="bin" src="${hybris.zip}" overwrite="true" failonemptyarchive="true">
+			<patternset>
+				<include name="**/hybris/bin/**/*"/>
+			</patternset>
+			<regexpmapper from="^([^/]+/)?hybris/bin/(.*)$" to="\2"/>
+		</unzip>
+	</target>
+
+	<target name="copyDriver">
+		<copy todir="bin/platform/lib/dbdriver">
+			<fileset dir="${sandbox}/Development/setup/oracledb" includes="ojdbc*.jar"/>
+		</copy>
+	</target>
+
+	<target name="copyProperties" description="Reset the local.properties to the template.">
+		<copy tofile="config/local.properties" file="config/local.properties.template" overwrite="true"/>
+	</target>
+
+	<target name="adjustLogging">
+		<propertyfile file="config/local.properties">
+			<entry key="log4j.logger.org.springframework.jms.listener" value="error"/>
+		</propertyfile>
+	</target>
+	
+	<target name="enableOracle" description="Adjusts the local.properties to use the Oracle server in the local vagrant."
+	        depends="copyDriver">
+		<propertyfile file="config/local.properties">
+			<entry key="db.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+			<entry key="db.driver" value="oracle.jdbc.driver.OracleDriver"/>
+			<entry key="db.username" value="hybris"/>
+			<entry key="db.password" value="hybris"/>
+			<entry key="oracle.dataTS" value="HYBRISDATA"/>
+			<entry key="oracle.indexTS" value="HYBRISIDX"/>
+		</propertyfile>
+	</target>
+
+	<target name="enableHsql" description="Adjust the local.properties to use HSQL in memory.">
+		<propertyfile file="config/local.properties">
+			<entry key="db.url" operation="del"/>
+			<entry key="db.driver" operation="del"/>
+			<entry key="db.username" operation="del"/>
+			<entry key="db.password" operation="del"/>
+			<entry key="oracle.dataTS" operation="del"/>
+			<entry key="oracle.indexTS" operation="del"/>
+		</propertyfile>
+	</target>
+	
+	<target name="rebuildHybris">
+		<fail unless="java7" message="Switch to Java 7"/>
+		<ant antfile="bin/platform/build.xml" inheritall="false" useNativeBasedir="true">
+			<target name="clean"/>
+			<target name="all"/>
+		</ant>
+	</target>
+
+    <target name="updateHybris">
+        <fail unless="java7" message="Switch to Java 7"/>
+        <ant antfile="bin/platform/build.xml" inheritall="false" useNativeBasedir="true">
+            <target name="updatesystem"/>
+        </ant>
+    </target>
+
+	<target name="setup" description="Do the setup for local database including rebuild and update of database."
+	        depends="copyProperties, adjustLogging, enableOracle, rebuildHybris, updateHybris">
+	</target>
+
+    <target name="cleanSetup" description="Do the whole setup and rebuild after checkout including hosts"
+            depends="copyHybris, setup, configureHosts">
+        <echo message="Before starting the server, ensure you have done configureHosts once."/>
+        <echo message="You may go to bin/platform and start the server calling 'hybrisserver'."/>
+    </target>
+
+	<target name="configureHosts" description="Configure all local tui domains, you typically need to call ant via sudo for this!">
+		<condition property="hosts.file" value="${env.SystemRoot}/System32/Drivers/etc/hosts">
+			<os family="windows"/>
+		</condition>
+		<condition property="hosts.file" value="/etc/hosts">
+			<os family="unix"/>
+		</condition>
+		<replaceregexp file="${hosts.file}" byline="true">
+			<regexp pattern="^(127.0.0.1[\s]+)(.*)$"/>
+			<substitution
+					expression="\1localhost local.tui.de local.tui.se local.tui.no local.tui.dk local.tui.fi local.tui.com hybris.local"/>
+		</replaceregexp>
+	</target>
+
+</project>

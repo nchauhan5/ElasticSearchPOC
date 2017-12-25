@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='resources/schemas/extensions.xsd'>
+
+	<extensions>
+
+		<!-- Hybris Extensions -->
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/embeddedserver' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/ldap' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/tomcatembeddedserver' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/solrfacetsearch' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/virtualjdbc' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/hmc' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/voucher' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/customerreview' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/basecommerce' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/payment' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/solrfacetsearchhmc' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/promotions' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/ticketsystem' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-channel/mobileservices' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-backoffice/backoffice' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/wishlist' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/platformhmc' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-content/cms2' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-content/cms2lib' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/btg' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-cockpit/cockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-content/cmscockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-cockpit/reportcockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/lucenesearch' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-platform-optional/platformwebservices' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/commerceservices' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/commercefacades' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-cockpit/admincockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-content/productcockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-accelerator/acceleratorservices' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-accelerator/acceleratorcms' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-accelerator/acceleratorfacades' />
+
+		<!-- TODO This extension is NOT part of Hybris 5.3.0.2 (vanished after 5.0.2). What is the proper migration?? -->
+		<extension dir='${HYBRIS_BIN_DIR}/ext-commerce/hyend2' />
+
+		<!-- Sapient core/common extensions -->
+		<!-- TODO These extensions are NOT part of Hybris 5.3.0.2. When (where) are they from, and what is their proper migration?? -->
+		<extension dir='${HYBRIS_BIN_DIR}/ext-sdg/sapientcommon' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-sdg/sapientcore' />
+
+		<!-- TUI extensions -->
+		<!-- TODO Standard location for extensions within the Hybris directory is ${HYBRIS_BIN_DIR}/custom. -->
+		<!-- TODO Consider separating our custom extensions from Hybris rather than copying Hybris on top of our versioned code. -->
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/MyTuiTicket' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorereportcockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuiadmincockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorecmscockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuiweb' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoreintout' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorebooking' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicore' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorepim' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorelucene' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoreendeca' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoresearch' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoremigration' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuibackoffice' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoreproductcockpit' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicoreint' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuicorecms' />
+
+		<!-- Nordic extensions -->
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordicendeca' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordiccore' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordicws' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordicint' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordicweb' />
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordiccorecmscockpit' />
+
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/tuiinitialdata' />
+		
+		<extension dir='${HYBRIS_BIN_DIR}/ext-custom/coreelastic' />
+
+	</extensions>
+
+</hybrisconfig>

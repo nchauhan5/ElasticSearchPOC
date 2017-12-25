@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+
+
+<project name="elastic-webapp" default="all" basedir=".">
+
+	<!-- ====================================================================== -->
+	<!-- Build environment properties                                           -->
+	<!-- ====================================================================== -->
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="../lib/exclude/ant-contrib-0.6.jar"/>
+		</classpath>
+	</taskdef>
+	<property file="../../../../../../Deployment/buildscripts/endeca/assembler/configurationfiles/files/environment_specific_files/local.env" />
+	<property name="build.type" value="SEBluesv"/>
+	<propertycopy name="workbench.app.name" from="${build.type}.workbench.app.name" />
+	<propertycopy name="build.finalName" from="${build.type}.build.finalName" />
+
+
+
+
+	<property name="release.packet" location="../../../../../../Deployment/buildscripts/endeca/assembler/buildartifact"/>
+
+	<property name="build.dir" value="target"/>
+	<property name="build.outputDir" value="${build.dir}/classes"/>
+	<property name="build.srcDir.0" value="src/main/java"/>
+	<property name="build.configDir.0" value="src/main/webapp/WEB-INF"/>
+	<property name="build.resourceDir.0" value="src/main/resources"/>
+	<property name="build.testResourceDir.0" value="src/test/resources" />
+	<property name="repo.local" value="../lib"/>
+	<property name="reporting.outputDirectory" value="${build.dir}/site"/>
+	<!-- Variables used for JUnit testin -->
+	<property name="test.dir" location="src/test/java" />
+	<property name="test.report.dir" location="testreport" />
+	<property name="build.test.dir" location="${build.dir}/tests" />
+	<property name="instrumented.dir" location="instrumented" />
+	<property name="coveragereport.dir" location="coveragereport" />
+	<property name="cobertura.dir" value="../lib/exclude" />
+
+
+
+
+	<!-- ====================================================================== -->
+	<!-- Defining classpaths                                                    -->
+	<!-- ====================================================================== -->
+
+	<path id="build.classpath">
+		<pathelement location="../anite-api/target/anite-api-0.2.51-SNAPSHOT.jar"/>
+		<pathelement location="../anite-impl/target/anite-impl-0.2.51-SNAPSHOT.jar"/>
+		<pathelement location="../anite-impl-jaxb/target/anite-impl-jaxb-0.2.51-SNAPSHOT.jar"/>
+		<pathelement location="../search-api/target/search-api-0.2.51-SNAPSHOT.jar"/>
+		<pathelement location="../search-api-anite-impl/target/search-api-anite-impl-0.2.51-SNAPSHOT.jar"/>
+
+		<fileset dir="${repo.local}">
+			<include name="**/*.jar" />
+		</fileset>
+
+	</path>
+
+	<!-- Define the classpath which includes the junit.jar and the classes after compiling-->
+	<path id="junit.class.path">
+		<pathelement location="../lib/exclude/junit.jar" />
+		<pathelement location="${build.outputDir}" />
+	</path>
+
+	<path id="cobertura.classpath">
+		<fileset dir="${cobertura.dir}">
+			<include name="cobertura-1.9.4.1.jar" />
+			<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" /> 
+	<!-- ====================================================================== -->
+	<!-- Cleaning up target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="clean" description="Clean the output directory">
+		<delete dir="${build.dir}"/>
+		<delete dir="${test.report.dir}" />
+		<delete includeemptydirs="true">
+			<fileset dir="${release.packet}" includes="**/*"/>
+		</delete>
+		<delete dir="${instrumented.dir}" />
+		<delete dir="${coveragereport.dir}" />
+	</target>
+	<!-- ====================================================================== -->
+	<!-- Replace tokens		                                             -->
+	<!-- ====================================================================== -->
+	<target name="antTemplates"
+	description="substitute values for symbolic names in template files">
+		<delete file="${build.configDir.0}/elasticspringmvc-servlet.xml"/>
+		<copy file="${build.configDir.0}/elasticspringmvc-servlet_tmpl.xml" tofile="${build.configDir.0}/elasticspringmvc-servlet.xml"/>
+
+		<replace file="${build.configDir.0}/elasticspringmvc-servlet.xml" token="@app.name@" value="${workbench.app.name}" />
+		<!--	<copy todir="../script" overwrite="true" >
+	<fileset dir="." includes="$sa_{build.type}environment.properties.template"/>
+	<mapper type="glob" from="sa_${build.type}environment.properties.template" to="environment.properties"/>
+	<filterset>
+	<filtersfile file="../../../../../../Deployment/buildscripts/endeca/assembler/configurationfiles/files/environment_specific_files/local.env"/>
+	</filterset>
+	</copy>
+-->
+		<copy file="src/main/webapp/WEB-INF/sa_${build.type}environment.properties.template" toFile="src/main/webapp/WEB-INF/environment.properties" overwrite="true">
+			<filterset>
+				<filtersfile file="../../../../../../Deployment/buildscripts/endeca/assembler/configurationfiles/files/environment_specific_files/local.env"/>
+			</filterset>
+		</copy>
+
+
+
+	</target>
+	<!-- ====================================================================== -->
+	<!-- Compilation target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="compile" description="Compile the code">
+		<mkdir dir="${build.outputDir}" />
+		<javac destdir="${build.outputDir}"
+			nowarn="false"
+			debug="true"
+			optimize="false"
+			deprecation="true"
+			target="1.6"
+			verbose="false"
+			fork="false"
+			source="1.6"
+			includeantruntime="false">
+			<compilerarg value="-Xlint" />
+			<src>
+				<pathelement location="${build.srcDir.0}" />
+			</src>
+			<classpath refid="build.classpath" />
+			<classpath refid="junit.class.path" />
+		</javac>
+	</target>
+
+	<target name="compile-junit" description="Compile the test code">
+		<mkdir dir="${test.report.dir}" />
+		<mkdir dir="${build.test.dir}" />
+		<javac destdir="${build.test.dir}"
+			nowarn="false"
+			debug="true"
+			optimize="false"
+			deprecation="true"
+			target="1.6"
+			verbose="false"
+			fork="false"
+			source="1.6"
+			includeantruntime="false"
+			encoding="UTF-8">
+			<compilerarg value="-Xlint" />
+			<src>
+				<pathelement location="${test.dir}" />
+				<!--	<pathelement location="${build.testResourceDir.0}"/> -->
+			</src>
+			<classpath refid="build.classpath" />
+			<classpath refid="junit.class.path" />
+		</javac>
+		<copy todir="${build.test.dir}">
+			<fileset dir="${test.dir}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Cobertura instrumentation -->
+	<target name="cobertura">
+		<!-- delete the datafile if it is there from a previous run -->
+		<delete file="${basedir}/cobertura.ser" />
+		<cobertura-instrument todir="${instrumented.dir}">
+			<ignore regex="org.apache.log4j.*" />
+			<fileset dir="${build.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+		</cobertura-instrument>
+	</target>
+
+	<!-- Run the junit -->
+	<target name="junit" depends="compile-junit,cobertura" description="Run the tests">
+		<junit printsummary="on" fork="true" haltonfailure="no" showoutput="true">
+			<sysproperty key="net.sourceforge.cobertura.datafile"
+				file="${basedir}/cobertura.ser" />
+			<classpath location="${instrumented.dir}" />
+			<classpath refid="build.classpath" />
+			<classpath refid="junit.class.path" />
+			<classpath>
+				<pathelement location="${build.test.dir}"/>
+				<!--	<pathelement location="${build.testResourceDir.0}"/> -->
+			</classpath>
+			<classpath refid="cobertura.classpath" />
+			<formatter type="xml" />
+			<batchtest todir="${test.report.dir}">
+				<fileset dir="${test.dir}">
+					<include name="**/*Test*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Javadoc target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="javadoc" description="Generates the Javadoc of the application">
+		<javadoc sourcepath="${build.srcDir.0}" 
+             packagenames="*" 
+             destdir="${reporting.outputDirectory}/apidocs" 
+             access="protected" 
+             old="false" 
+             verbose="false" 
+             version="true" 
+             use="true" 
+             author="true" 
+             splitindex="false" 
+             nodeprecated="false" 
+             nodeprecatedlist="false" 
+             notree="false" 
+             noindex="false" 
+             nohelp="false" 
+             nonavbar="false" 
+             serialwarn="false" 
+             charset="ISO-8859-1" 
+             linksource="false" 
+             breakiterator="false"/>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Package target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="all" depends="compile, antTemplates" description="Package the application">
+		<mkdir dir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<mkdir dir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<copy file="../anite-api/target/anite-api-0.2.51-SNAPSHOT.jar"
+        todir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<copy file="../anite-impl/target/anite-impl-0.2.51-SNAPSHOT.jar"
+        todir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<copy file="../anite-impl-jaxb/target/anite-impl-jaxb-0.2.51-SNAPSHOT.jar"
+        todir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<copy file="../search-api/target/search-api-0.2.51-SNAPSHOT.jar"
+        todir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+		<copy file="../search-api-anite-impl/target/search-api-anite-impl-0.2.51-SNAPSHOT.jar"
+        todir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+
+		<copy todir="${build.dir}/${build.finalName}/WEB-INF/lib">
+			<fileset dir="${repo.local}/include">
+				<include name="*.jar"/>
+			</fileset>
+		</copy>
+
+		<war destfile="${build.dir}/${build.finalName}.war" 
+         compress="true" 
+         webxml="src/main/webapp/WEB-INF/web.xml">
+			<lib dir="${build.dir}/${build.finalName}/WEB-INF/lib"/>
+			<classes dir="${build.outputDir}"/>
+			<fileset dir="src/main/webapp" 
+               excludes="WEB-INF/web.xml"/>
+		</war>
+		<delete dir="${build.dir}/${build.finalName}"/>
+		<!--<delete dir="${build.dir}/classes"/>
+         <delete dir="${build.dir}/tests"/> -->
+	</target>
+
+
+	<!-- ====================================================================== -->
+	<!-- A dummy target for the package named after the type it creates         -->
+	<!-- ====================================================================== -->
+
+	<target name="war" depends="all" description="Builds the war for the application"/>
+
+
+	<target name="create_buildversion.txt" description="Creates buildversion.txt file for versioning">
+		<delete file="${build.dir}/buildversion.txt" failonerror="false"/>
+		<touch file="${build.dir}/buildversion.txt" />
+		<tstamp>
+			<format property="BUILD_DATE" pattern="dd-MMMM-yyy" />
+			<format property="BUILD_TIME" pattern="hh:mm aa" />
+		</tstamp>
+		<propertyfile file="${build.dir}/buildversion.txt" comment="Build Packet Information">
+			<entry  key="build.date" value="${BUILD_DATE}"/>
+			<entry  key="build.time" value="${BUILD_TIME}"/>
+			<entry  key="branch.name" value="${GIT_BRANCH}"/>
+			<entry  key="build.number" value="${BUILD_NUMBER}"/>
+		</propertyfile>
+	</target>
+	<target name="copy" description="copy build packets and configuration files" >
+		<echo>"copy configuration files into build artifact"</echo>
+		<copy todir="../../../../../../Deployment/buildscripts/endeca/assembler/buildartifact/configurationfiles" >
+			<fileset dir="../../../../../../Deployment/buildscripts/endeca/assembler/configurationfiles" includes="**"/>
+		</copy>
+		<echo>"copy configuration files from code location into build artifact location"</echo>
+		<copy todir="../../../../../../Deployment/buildscripts/endeca/assembler/buildartifact/configurationfiles/files/properties" >
+			<fileset dir="src/main/webapp/WEB-INF/" includes="*.template"/>
+		</copy>
+		<echo>"copy buildversion.txt"</echo>
+		<copy file="../../../eac-app/tuien/config/deploy/target/buildversion.txt" tofile="../../../../../../Deployment/buildscripts/endeca/assembler/buildartifact/buildversion.txt" />
+
+		<echo>"copy assembler build artifact"</echo>
+		<copy todir="../../../../../../Deployment/buildscripts/endeca/assembler/buildartifact/" >
+			<fileset dir="target" includes="**"/>
+		</copy>
+	</target>
+
+
+	<target name="create_complete_packet" description="Creates the complete packet" >
+
+		<zip destfile="${release.packet}/configuration_file.zip"
+basedir="${release.packet}" includes="configurationfiles/**"/>
+
+	</target>
+
+</project>

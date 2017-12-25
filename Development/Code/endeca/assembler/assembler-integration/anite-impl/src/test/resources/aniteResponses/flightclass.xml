@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AvCache Version="4.32.3105" Node="10.78.13.27@0@0">
+	<!-- sdate=2016-04-01&edate=2016-04-01&pax_ad=2&s_tp=4&h_tp=P&p_tp=TP&prom_no=1&prom=FC&stay=13,15&dep=ARN&accom=135%7CS&accom_no=1 -->
+	<Status>
+		<Total Count="3" />
+	</Status>
+	<Result>
+		<Offers Count="3">
+			<Offer Date="2016-04-01" Stay="15" Price="33196.00" PricePP="16598.00" Pkg="ARNHKT5A.160401C15 STOHKTS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2016-04-01" Stay="15" Id="135" Code="TRIMEB" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[
+27502-00TRIMEB NODR1O00000C0003/201400
+]]>
+					</SysInfo>
+					<Unit Code="C0010" Qty="1" Price="33196.00" PricePP="16598.00" DiscPP="-600.00" Disc="-1200.00" Board="BB" Avail="3">
+						<SysInfo>
+							<![CDATA[
+00TRIMEBDRC0010O00000 1/2
+]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0" />
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="6">
+					<SysInfo>
+						<![CDATA[
+C-0015FRHKTARNHKT5A.BLX851 160402STO FC J                              1 B
+]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-04-01" DepTime="1320" ArrPt="HKT" ArrDate="2016-04-02" ArrTime="0520" Avail="6" FltNo="BLX851" Dir="O" Class="C" Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="HKT" DepDate="2016-04-16" DepTime="0730" ArrPt="ARN" ArrDate="2016-04-16" ArrTime="1430" Avail="6" FltNo="BLX852" Dir="I" Class="C" Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2016-04-01" Stay="15" Price="27796.00" PricePP="13898.00" Pkg="ARNHKT5B.160401B15 STOHKTS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2016-04-01" Stay="15" Id="135" Code="TRIMEB" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[
+27502-00TRIMEB NODR1O00000C0003/201400
+]]>
+					</SysInfo>
+					<Unit Code="C0010" Qty="1" Price="27796.00" PricePP="13898.00" DiscPP="-1800.00" Disc="-3600.00" Board="BB" Avail="3">
+						<SysInfo>
+							<![CDATA[
+00TRIMEBDRC0010O00000 1/2
+]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0" />
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="91">
+					<SysInfo>
+						<![CDATA[
+B-0015FRHKTARNHKT5B.BLX851 160402STO FB J                              1 B
+]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-04-01" DepTime="1320" ArrPt="HKT" ArrDate="2016-04-02" ArrTime="0520" Avail="91" FltNo="BLX851" Dir="O" Class="B" Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="HKT" DepDate="2016-04-16" DepTime="0730" ArrPt="ARN" ArrDate="2016-04-16" ArrTime="1430" Avail="91" FltNo="BLX852" Dir="I" Class="B" Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2016-04-01" Stay="15" Price="27996.00" PricePP="13998.00" Pkg="ARNHKT5C.160401 15 STOHKTS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2016-04-01" Stay="15" Id="135" Code="TRIMEB" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[
+27502-00TRIMEB NODR1O00000C0003/201400
+]]>
+					</SysInfo>
+					<Unit Code="C0010" Qty="1" Price="27996.00" PricePP="13998.00" DiscPP="-1300.00" Disc="-2600.00" Board="BB" Avail="3">
+						<SysInfo>
+							<![CDATA[
+00TRIMEBDRC0010O00000 1/2
+]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0" />
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30" />
+							<Pax Id="2" Age="30" />
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="15">
+					<SysInfo>
+						<![CDATA[
+-0015FRHKTARNHKT5C.BLX851 160402STO F  J                              1 B
+]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-04-01" DepTime="1320" ArrPt="HKT" ArrDate="2016-04-02" ArrTime="0520" Avail="15" FltNo="BLX851" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+					<Route Id="2" DepPt="HKT" DepDate="2016-04-16" DepTime="0730" ArrPt="ARN" ArrDate="2016-04-16" ArrTime="1430" Avail="15" FltNo="BLX852" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00" />
+					</Route>
+				</Transport>
+			</Offer>
+			<Lists>
+				<Board>BB</Board>
+				<DepPt>ARN</DepPt>
+				<OutSlots>B</OutSlots>
+				<InSlots>A</InSlots>
+				<Price>27796.00,33196.00</Price>
+				<PricePP>13898.00,16598.00</PricePP>
+				<DreamLiner>N</DreamLiner>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

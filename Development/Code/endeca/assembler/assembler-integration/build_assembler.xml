@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+
+<project name="assembler-integration" default="all" basedir=".">
+
+	<property name="build.dir.cache.webapps" value="cache-webapp/target"/>
+	<property name="test.report.dir.main" location="testreportall" />
+	<property name="test.report.dir.anite.impl" location="anite-impl/testreport" />
+	<property name="test.report.dir.cache.webapp" location="cache-webapp/testreport" />
+	<property name="test.report.dir.search.api.anite.impl" location="search-api-anite-impl/testreport" />
+	<property name="coveragereport.dir.main" location="coverageall" />
+	<property name="anite.impl.src.dir" location="anite-impl/src/main/java" />
+	<property name="cache.webapp.src.dir" location="cache-webapp/src/main/java" />
+	<property name="search.api.anite.impl.src.dir" location="search-api-anite-impl/src/main/java" />
+	<path id="cobertura.classpath">
+		<fileset dir="lib/exclude">
+		<include name="cobertura-1.9.4.1.jar" />
+		<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+  <!-- ====================================================================== -->
+  <!-- Cleaning up target                                                     -->
+  <!-- ====================================================================== -->
+	
+  <target name="clean" description="Clean the output directory">
+    <ant antfile="build.xml" dir="anite-api" target="clean"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="clean"/>
+    <ant antfile="build.xml" dir="anite-impl" target="clean"/>
+	<ant antfile="build.xml" dir="search-api" target="clean"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="clean"/>
+    <ant antfile="build_assembler.xml" dir="cache-webapp" target="clean"/>
+	<ant antfile="build_assembler.xml" dir="elastic-webapp" target="clean"/>
+    <delete dir="${coveragereport.dir.main}" />
+    <delete dir="${test.report.dir.main}" />
+  </target>
+
+
+  <!-- ====================================================================== -->
+  <!-- Compilation target                                                     -->
+  <!-- ====================================================================== -->
+
+  <target name="compile" description="Compile the code">
+    <ant antfile="build.xml" dir="anite-api" target="compile"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="compile"/>
+    <ant antfile="build.xml" dir="anite-impl" target="compile"/>
+	<ant antfile="build.xml" dir="search-api" target="compile"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="compile"/>
+	<ant antfile="build_assembler.xml" dir="elastic-webapp" target="compile"/>
+  </target>
+
+  <!-- ====================================================================== -->
+  <!-- Javadoc target                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="javadoc" description="Generates the Javadoc of the application">
+    <ant antfile="build.xml" dir="anite-api" target="javadoc"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="javadoc"/>
+    <ant antfile="build.xml" dir="anite-impl" target="javadoc"/>
+	<ant antfile="build.xml" dir="search-api" target="javadoc"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="javadoc"/>
+    <ant antfile="build_assembler.xml" dir="cache-webapp" target="javadoc"/>
+  </target>
+  <!-- ====================================================================== -->
+  <!-- Junit target                                                         -->
+  <!-- ====================================================================== -->
+  <target name="junit" description="Run unit test cases">
+   <ant antfile="build.xml" dir="anite-impl" target="junit"/>
+   <ant antfile="build_assembler.xml" dir="cache-webapp" target="junit"/>
+   <ant antfile="build.xml" dir="search-api-anite-impl" target="junit"/>
+
+   </target>
+
+  <!-- ====================================================================== -->
+  <!-- Package target                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="all" description="Package the application">
+    <ant antfile="build.xml" dir="anite-api" target="all"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="all"/>
+    <ant antfile="build.xml" dir="anite-impl" target="all"/>
+	<ant antfile="build.xml" dir="search-api" target="all"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="all"/>
+	<ant antfile="build_assembler.xml" dir="elastic-webapp" target="all"/>
+  </target>
+
+	<target name="reports_all" description="Generates reports for junit and coverage">
+		<mkdir dir="${test.report.dir.main}" />
+		<mkdir dir="${coveragereport.dir.main}" />
+		<junitreport todir="${test.report.dir.main}">
+			<fileset dir="${test.report.dir.anite.impl}">
+			<include name="TEST-*.xml"/>
+			</fileset>
+			<fileset dir="${test.report.dir.cache.webapp}">
+			<include name="TEST-*.xml"/>
+			</fileset>
+			<fileset dir="${test.report.dir.search.api.anite.impl}">
+			<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${test.report.dir.main}"/>
+		</junitreport>
+		<cobertura-merge>
+		    <fileset dir=".">
+		            <include name="anite-impl/cobertura.ser" />
+		            <include name="cache-webapp/cobertura.ser" />
+					<include name="search-api-anite-impl/cobertura.ser" />
+		    </fileset>
+		</cobertura-merge>
+		<cobertura-report format="xml" destdir="${coveragereport.dir.main}" >
+			<fileset dir="${anite.impl.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<fileset dir="${cache.webapp.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<fileset dir="${search.api.anite.impl.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+		</cobertura-report>
+		<cobertura-report format="html" destdir="${coveragereport.dir.main}/html" >
+			<fileset dir="${anite.impl.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<fileset dir="${cache.webapp.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+			<fileset dir="${search.api.anite.impl.src.dir}">
+				<include name="**/*.class" />
+				<exclude name="**/*Test.class" />
+			</fileset>
+		</cobertura-report>
+	 </target>
+</project>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Generated via ant extensionsxml - please be aware that this file get overwritten each time!
+
+Parameters:
+ -Dplatform.extensions=nordicweb
+
+
+-->
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='resources/schemas/extensions.xsd'>
+
+	<extensions>
+		<!-- 
+		     Please note that all extensions in platform/ext/* have been omitted 
+		     because they're automatically loaded. Please use <extensions autoload='false'> 
+		     in case you want to configure them explicitly. 
+		  -->
+		 <path dir="${HYBRIS_BIN_DIR}" />
+		 <extension name="hyend2" />
+		 <extension dir="${HYBRIS_BIN_DIR}/ext-custom/tuiweb" />
+		 <extension dir='${HYBRIS_BIN_DIR}/ext-custom/nordicweb'/>
+	</extensions>
+
+</hybrisconfig>

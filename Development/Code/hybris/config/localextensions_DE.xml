@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
+    <extensions>
+        <!-- 
+                All extensions located in ${HYBRIS_BIN_DIR}/platform/ext are automatically loaded. 
+                More information about how to configure available extensions can be found here : https://wiki.hybris.com/x/nZVzC
+        -->
+                
+        <path dir="${HYBRIS_BIN_DIR}" />    
+    
+        
+                
+        <extension name="basecommerce" />
+        <extension name="btg" />        
+        <extension name="btgcockpit" />
+        <extension name="commercefacades" />
+        <extension name="commerceservices" />
+        <extension name="customerreview" /> 
+         <!--<extension name="cybersource" />-->
+        <extension name="hyend2" />
+        
+        <extension name="solrfacetsearch" />
+        <extension name="solrfacetsearchhmc" />     
+        
+        <extension name="bmecat" />
+        <extension name="bmecathmc" />
+        <extension name="classificationsystems" />
+        <extension name="classificationsystemshmc" />
+        <extension name="cms2" />
+        <extension name="cms2lib" />
+        <extension name="cmscockpit" /> 
+        
+        <!--<extension name="mam" />-->
+        
+        <extension name="productcockpit" />
+        <extension name="cockpit" />
+
+        <extension name="cscockpit" />
+        <extension name="reportcockpit"/>
+        <extension name="virtualjdbc" />
+
+
+        <extension name="acceleratorcms" />
+        <extension name="acceleratorfacades" />
+        <extension name="acceleratorservices" />
+
+        <extension name="yacceleratorfulfilmentprocess" /> 
+        
+        <extension name="admincockpit" />
+      
+        <extension name="cockpit" />
+        <extension name="tuicore" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicore"/>
+        <extension name="tuicorecms" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorecms"/>        
+        <extension name="tuicoreint" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreint"/>        
+        <extension name="tuicorepim" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorepim"/>        
+            
+        <extension name="tuicoreproductcockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreproductcockpit"/>      
+        <extension name="tuicorebooking"  dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorebooking"/>   
+        <extension name="tuicoreaccount" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreaccount"/>
+        <extension name="tuicoreintout" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreintout"/>
+        
+	     <!--
+        <extension name="nordiccore" dir="${HYBRIS_BIN_DIR}/ext-custom/nordiccore"/>
+        <extension name="nordicint" dir="${HYBRIS_BIN_DIR}/ext-custom/nordicint"/>
+        <extension name="nordicintout" dir="${HYBRIS_BIN_DIR}/ext-custom/nordicintout"/>
+        <extension name="nordicweb" dir="${HYBRIS_BIN_DIR}/ext-custom/nordicweb"/>
+        <extension name="nordicws" dir="${HYBRIS_BIN_DIR}/ext-custom/nordicws"/>
+        <extension name="nordiccorecmscockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/nordiccorecmscockpit"/> -->
+      
+         <extension name="tuicorecmscockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorecmscockpit"/>
+        
+        <extension name="sapientcommon" dir="${HYBRIS_BIN_DIR}/ext-sdg/sapientcommon"/>     
+        <extension name="sapientcore" dir="${HYBRIS_BIN_DIR}/ext-sdg/sapientcore"/> 
+        
+        <extension name="tuicoremigration" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoremigration"/>    
+        <extension name="tuiadmincockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/tuiadmincockpit"/>  
+        <extension name="tuibackoffice" dir="${HYBRIS_BIN_DIR}/ext-custom/tuibackoffice"/>
+        
+        <extension name="tuicorereportcockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorereportcockpit"/>
+	     
+	 	<!-- Added New Search Extensions --> 	
+        
+	    <extension name="tuicoresearch" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoresearch"/>
+	    <extension name="tuicoreendecain" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreendecain"/>
+	    <extension name="tuicoreendecaout" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreendecaout"/>
+	    <extension name="tuicorelucenein" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicorelucenein"/>
+	    <extension name="tuicoreluceneout" dir="${HYBRIS_BIN_DIR}/ext-custom/tuicoreluceneout"/>
+		
+	
+              
+        <extension name="decore" dir="${HYBRIS_BIN_DIR}/ext-custom/decore"/>
+        <extension name="decorepim" dir="${HYBRIS_BIN_DIR}/ext-custom/decorepim"/>  
+        <extension name="decoreint" dir="${HYBRIS_BIN_DIR}/ext-custom/decoreint"/> 
+        <extension name="decoreproductcockpit" dir="${HYBRIS_BIN_DIR}/ext-custom/decoreproductcockpit"/>  
+   
+    </extensions>
+</hybrisconfig>

@@ -1,0 +1,2 @@
+rootProject.name = 'endeca'
+include ':anite-api', ':anite-impl', ':anite-impl-jaxb', ':search-api', ':search-api-anite-impl', ':cache-webapp'

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2011 Endeca Technologies, Inc. The use of the source code in this file is subject to the ENDECA TECHNOLOGIES, INC. 
+	SOFTWARE TOOLS LICENSE AGREEMENT. The full text of the license agreement can be found in the ENDECA INFORMATION ACCESS PLATFORM THIRD-PARTY 
+	SOFTWARE USAGE AND LICENSES document included with this software distribution. -->
+<web-app id="elastic-webapp" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<display-name>Elastic Anite integration application</display-name>
+	<description>Elastic Anite integration application</description>
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- Filter that exposes the request to Spring -->
+	<filter>
+		<filter-name>RequestContextFilter</filter-name>
+		<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>RequestContextFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+	    <dispatcher>INCLUDE</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+	</filter-mapping>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/elasticspringmvc-servlet.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	
+	<servlet>
+        <servlet-name>elasticspringmvc</servlet-name>
+            <servlet-class>
+                org.springframework.web.servlet.DispatcherServlet
+            </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>elasticspringmvc</servlet-name>
+        <url-pattern>/request/*</url-pattern>
+    </servlet-mapping>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+</web-app>

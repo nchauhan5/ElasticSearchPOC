@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 (x64) (http://www.altova.com) by Lee Miller (Anite) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="AvCache">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Status" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Total" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:attribute name="Count" type="xs:unsignedInt"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Result" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Offers" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Offer" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="Date" type="xs:date" use="required"/>
+												<xs:attribute name="Avail" type="YesNo" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Count" type="xs:unsignedInt"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Error" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="Code" use="required"/>
+						<xs:attribute name="Text" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:string"/>
+			<xs:attribute name="Node" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="YesNo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

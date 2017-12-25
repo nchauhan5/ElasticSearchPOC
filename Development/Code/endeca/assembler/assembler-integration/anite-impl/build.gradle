@@ -1,0 +1,9 @@
+dependencies {
+    compile project(':anite-api'),
+            project(':anite-impl-jaxb'),
+            "commons-lang:commons-lang:2.4",
+            "commons-io:commons-io:2.0",
+            "commons-collections:commons-collections:3.2.1",
+            "org.apache.httpcomponents:httpclient:4.1.3",
+            "javax.servlet:servlet-api:2.5"
+}

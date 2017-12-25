@@ -1,0 +1,12 @@
+dependencies {
+    compile project(':search-api'), project(':anite-impl'),
+            "joda-time:joda-time:$jodaTimeVersion",
+            "com.javacodegeeks:jstringsearch:1.0.0",
+            "com.endeca:endeca_assembler_core:11.1.0",
+            "com.endeca:endeca_assembler_navigation:11.1.0",
+            "com.endeca:endeca_navigation:6.5.1",
+            "org.springframework:spring-beans:$springVersion",
+            'org.springframework.ws:spring-ws-core:2.2.0.RELEASE',
+            "com.saxml09i:crsAvailableBoards:"
+}
+

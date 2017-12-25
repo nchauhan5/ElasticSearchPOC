@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+table.combinedRecord {
+	border: #dddddd solid thin;
+}
+
+table.combinedRecord thead th {
+	background-color: #dddddd;
+}
+
+table.combinedRecord td {
+	font-size: smaller;
+	padding: .1em;
+	border: #dddddd solid thin;
+}
+
+table.combinedRecord td.key {
+	background-color: #dddddd;
+}
+
+div.AniteSpotlight {
+	font-size: smaller;
+}
+
+div.AniteSpotlight .title {
+	text-align: center; font : larger;
+	padding: 1em;
+	background-color: #ddaaaa;
+	font: larger;
+}

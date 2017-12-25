@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location"
+			value="classpath:search-api-anite-impl-spring.properties"></property>
+	</bean>
+
+	<!-- ===========================================Services=============================================== -->
+
+	<bean id="searchAPIService"
+		class="com.endeca.search.api.services.impl.AniteSearchAPIServiceImpl"
+		scope="prototype">
+		<property name="aniteParametersProvider" ref="defaultAniteParametersProvider" />
+		<property name="durationAutoSelectProvider" ref="durationAutoSelectProvider" />
+		<property name="aniteInterface" ref="cachingAniteInterface" />
+	<!-- <property name="mdexRequestBroker" ref="vanillaMdexRequestBroker" /> -->
+		<property name="crsSoapService" ref="crsSoapService" />
+		<property name="configuredBoardBasis">
+			<map>
+				<entry key="AI">
+					<value>LIBO-000411</value>
+				</entry>
+				<entry key="BB">
+					<value>LIBO-000408</value>
+				</entry>
+				<entry key="FB">
+					<value>LIBO-000410</value>
+				</entry>
+				<entry key="HB">
+					<value>LIBO-000409</value>
+				</entry>
+				<entry key="RO">
+					<value>LIBO-000001246</value>
+				</entry>
+			</map>
+		</property>
+		<property name="clubPackagesOnFlightClassService" ref="clubPackagesOnFlightClassService" />
+	</bean>
+
+	<bean id="sampleResponseSearchAPIService" parent="searchAPIService"
+		class="com.endeca.search.api.services.impl.AniteSearchAPIServiceImpl"
+		scope="prototype">
+		<property name="aniteParametersProvider" ref="defaultAniteParametersProvider" />
+		<property name="durationAutoSelectProvider" ref="durationAutoSelectProvider" />
+		<property name="aniteInterface" ref="sampleResponsesAniteInterface" />
+	</bean>
+
+	<!-- ===========================================Populators=============================================== -->
+
+	<bean id="searchAPIRequestDataPopulator"
+		class="com.endeca.search.api.populators.SearchAPIRequestDataPopulator">
+		<property name="durationDataPopulator" ref="durationDataPopulator" />
+		<property name="departureDataPopulator" ref="departureDataPopulator" />
+		<property name="partyDataPopulator" ref="partyDataPopulator" />
+		<property name="sortPaginationDataPopulator" ref="sortPaginationDataPopulator" />
+		<!-- added for DE32941 -->
+		<property name="removedFacetPriceDataPopulator" ref="removedFacetPriceDataPopulator" />
+		<property name="mandatoryAttributesMap">
+			<map>
+				<entry key="h_tp" value="P" />
+				<entry key="p_tp" value="TP" />
+				<entry key="f" value="Y" />
+			</map>
+		</property>
+		<property name="facetsDataPopulator" ref="facetsDataPopulator" />
+	</bean>
+
+	<bean id="durationDataPopulator" class="com.endeca.search.api.populators.DurationDataPopulator" />
+
+	<bean id="departureDataPopulator" class="com.endeca.search.api.populators.DepartureDataPopulator" />
+
+	<bean id="partyDataPopulator" class="com.endeca.search.api.populators.PartyDataPopulator" />
+
+	<bean id="sortPaginationDataPopulator"
+		class="com.endeca.search.api.populators.SortPaginationDataPopulator" />
+
+	<!-- added for DE32941 -->
+	<bean id="removedFacetPriceDataPopulator"
+		class="com.endeca.search.api.populators.RemovedFacetPriceDataPopulator" />
+
+
+	<bean id="facetsDataPopulator" class="com.endeca.search.api.populators.FacetsDataPopulator">
+		<property name="overrideParamsMap">
+			<map>
+				<entry key="DEPARTUREAIRPORTS" value="dep" />
+				<entry key="PRICEPERPERSON" value="max_prc" />
+				<entry key="PRICETOTAL" value="max_prc" />
+				<entry key="DEPARTURETIME" value="slot_o" />
+				<entry key="ARRIVALTIME" value="slot_i" />
+				<entry key="FLIGHTCLASS" value="seat_tp" />
+			</map>
+		</property>
+	</bean>
+
+
+	<!-- ===========================================Un-marshaller=============================================== -->
+	<bean id="searchAPIAniteResponseStreamUnmarshaller"
+		class="com.endeca.search.api.response.unmarshaller.impl.SearchAPIAniteResponseStreamUnmarshaller" />
+
+	<!-- ===================================Anite Parameter Provider============================================ -->
+	<bean id="defaultAniteParametersProvider"
+		class="com.endeca.search.api.anite.paramteres.provider.impl.DefaultAniteParametersProvider">
+		<property name="allowedPassthroughKeys">
+			<description>List of parameters names that pass straight through to
+				Anite
+			</description>
+			<list>
+				<value>max_prc</value>
+				<value>rm_n</value>
+				<value>slot_o</value>
+				<value>slot_i</value>
+				<value>seat_tp</value>
+				<value>dow</value>
+				<value>disc_tp</value>
+				<value>f_no</value>
+				<value>f</value>
+				<value>h_tp</value>
+				<value>p_tp</value>
+				<value>dep</value>
+				<value>pkg</value>
+			</list>
+		</property>
+		<property name="allowedPassthroughPatterns">
+			<description>List of parameters name patterns that pass straight
+				through to Anite
+			</description>
+			<list>
+				<value>rm_\d+</value><!-- e.g. "rm_1", "rm_2", "rm_12345" -->
+				<value>f_\d+</value><!-- e.g. "f_1", "f_2", "f_12345" -->
+				<value>fa_\d+</value><!-- as above -->
+				<value>fo_\d+</value><!-- as above -->
+			</list>
+		</property>
+	</bean>
+	<bean id="durationAutoSelectProvider" parent="defaultAniteParametersProvider"
+		class="com.endeca.search.api.anite.paramteres.provider.impl.DurationAutoSelectProvider"
+		scope="prototype">
+		<property name="aniteInterface" ref="aniteInterface" />
+	</bean>
+
+	<!-- ===================================Anite Response Converter============================================ -->
+	<bean id="aniteCalendarResponseConverter"
+		class="com.endeca.search.api.jaxb.converters.impl.AniteCalendarResponseConverter" />
+	<bean id="aniteDurationResponseConverter"
+		class="com.endeca.search.api.jaxb.converters.impl.AniteDurationResponseConverter" />
+	<bean id="anitePackagesResponseConverter"
+		class="com.endeca.search.api.jaxb.converters.impl.AnitePackagesResponseConverter" />
+	<!-- ============================= Adapters ================================================================= -->
+
+	<bean id="paddingFormatAdapter" class="com.endeca.search.api.adapters.PaddingAdapter"
+		scope="singleton">
+		<constructor-arg index="0" value="0" />
+		<constructor-arg index="1" value="0" />
+	</bean>
+
+	<bean id="hybrisCodeAdapter" class="com.endeca.search.api.adapters.HybrisCodeAdapter"
+		scope="singleton" />
+
+	<bean id="codeFormatAdapter" class="com.endeca.search.api.adapters.ChainedCodeFormatAdapter"
+		scope="singleton">
+		<property name="adapters">
+			<list>
+				<ref bean="hybrisCodeAdapter" />
+				<ref bean="paddingFormatAdapter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="clubPackagesOnFlightClassService"
+		class="com.endeca.search.api.services.impl.ClubPackagesOnFlightClassServiceImpl">
+		<property name="configuredBoardBasis">
+			<map>
+				<entry key="AI">
+					<value>LIBO-000411</value>
+				</entry>
+				<entry key="BB">
+					<value>LIBO-000408</value>
+				</entry>
+				<entry key="FB">
+					<value>LIBO-000410</value>
+				</entry>
+				<entry key="HB">
+					<value>LIBO-000409</value>
+				</entry>
+				<entry key="RO">
+					<value>LIBO-000001246</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+</beans>

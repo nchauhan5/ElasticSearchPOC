@@ -1,0 +1,35 @@
+configurations {
+    jaxws
+}
+
+dependencies {
+    jaxws "org.slf4j:slf4j-simple:$slf4jVersion",
+            "com.sun.xml.bind:jaxb-impl:2.1.12",
+            "com.sun.xml.bind:jaxb-xjc:2.1.12",
+            "org.jvnet.jaxb2_commons:jaxb2-basics:0.9.3"
+    compile project(':anite-impl')
+}
+
+task codegen {
+    System.setProperty("javax.xml.accessExternalSchema", "file")
+    System.setProperty("com.sun.tools.xjc.XJCFacade.nohack", "true")
+    ext.destDir = sourceSets.main.java.srcDirs[0]
+    ext.schemaFile = file("src/main/resources/SearchAPISchema.xsd")
+    outputs.dir destDir
+    doLast {
+        ant {
+            taskdef(name: 'xjc',
+                    classname: 'com.sun.tools.xjc.XJCTask',
+                    classpath: configurations.jaxws.asPath)
+            destDir.mkdirs()
+            xjc(schema: schemaFile,
+                    package: 'com.endeca.search.api.response',
+                    destdir: destDir
+            ) {
+            }
+        }
+    }
+}
+
+compileJava.dependsOn codegen
+

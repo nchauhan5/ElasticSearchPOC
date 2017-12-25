@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/anite-api"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/anite-impl"/>
+	<classpathentry kind="lib" path="/lib/include/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-io-2.0.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="/lib/include/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/ehcache-core-2.4.6.jar"/>
+	<classpathentry kind="lib" path="/lib/include/ehcache-web-2.0.4.jar"/>
+	<classpathentry kind="lib" path="/lib/include/hamcrest-all-1.3.jar"/>
+	<classpathentry kind="lib" path="/lib/include/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jackson-core-asl-1.9.11.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jackson-mapper-asl-1.9.11.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jaxb-impl-2.1.12.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jaxb-xjc-2.1.12.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jdom-1.1.3.jar"/>
+	<classpathentry kind="lib" path="/lib/include/joda-time-2.3.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jsp-api-2.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/jstl-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/lib/include/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="/lib/include/searchapischema-0.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="/lib/include/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/slf4j-jdk14-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-aop-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-asm-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-beans-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-context-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-core-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-expression-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-test-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/spring-web-3.0.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/lib/include/standard-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/lib/include/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="/lib/include/urlrewritefilter-3.1.0.jar"/>
+	<classpathentry kind="lib" path="/lib/include/endeca_assembler_core-11.1.0.jar"/>
+	<classpathentry kind="lib" path="/lib/include/endeca_assembler_navigation-11.1.0.jar"/>
+	<classpathentry kind="lib" path="/lib/include/endeca_navigation-6.5.1.jar"/>
+	<classpathentry kind="lib" path="/lib/include/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="/lib/include/httpcore-4.4.4.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

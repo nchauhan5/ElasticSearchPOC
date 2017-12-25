@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PACKAGES">
+		<xs:annotation>
+			<xs:documentation>Root Node Packages Containing a List of Packages with all the relevant information</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PACKAGE" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Node PACKAGE. Child nodes within this contains all package information returned by search api</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="OFFERINFO" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Offer Info Containing Offer Related Data </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="date" type="xs:date" use="required"/>
+									<xs:attribute name="stay" type="xs:int" use="required"/>
+									<xs:attribute name="priceTotal" type="xs:decimal" use="required"/>
+									<xs:attribute name="pricePerPerson" type="xs:decimal"/>
+									<xs:attribute name="deposit" type="xs:decimal"/>
+									<xs:attribute name="coachTransfer" type="xs:boolean"/>
+									<xs:attribute name="carHire" type="xs:boolean"/>
+									<xs:attribute name="worldCare" type="xs:boolean"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="HOTELINFO" minOccurs="1" maxOccurs="1">
+								<xs:annotation>
+									<xs:documentation>Hotel Info containing information about the Hotel that is returned within the package</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="brand" type="xs:string"/>
+									<xs:attribute name="id" type="xs:string" use="required"/>
+									<xs:attribute name="commercialPriority" type="xs:int" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ROOMINFO" minOccurs="1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Rooms Info containing information about the rooms that are within the hotel</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PARTYINFO" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:attribute name="adults" type="xs:int"/>
+												<xs:attribute name="children" type="xs:int"/>
+												<xs:attribute name="infant" type="xs:int"/>
+												<xs:attribute name="seniors" type="xs:int"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="roomTypeName" type="xs:string"/>
+									<xs:attribute name="roomCode" type="xs:string" use="required"/>
+									<xs:attribute name="availability" type="xs:boolean" use="required"/>
+									<xs:attribute name="priceTotal" type="xs:decimal" use="required"/>
+									<xs:attribute name="pricePerPerson" type="xs:decimal"/>
+									<xs:attribute name="discountTotal" type="xs:decimal"/>
+									<xs:attribute name="discountPerPerson" type="xs:decimal"/>
+									<xs:attribute name="defaultBoard" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BOARDINFO" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Information about the Board information</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="boardCode" type="xs:string" use="required"/>
+									<xs:attribute name="boardPrice" type="xs:decimal" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FLIGHTINFO" minOccurs="2" maxOccurs="2">
+								<xs:annotation>
+									<xs:documentation>Information about the In-bound and Out-bound flight  details</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="departurePort" type="xs:string" use="required"/>
+									<xs:attribute name="departureDate" type="xs:date" use="required"/>
+									<xs:attribute name="departureTime" type="xs:string" use="required"/>
+									<xs:attribute name="arrivalPort" type="xs:string" use="required"/>
+									<xs:attribute name="arrivalDate" type="xs:date" use="required"/>
+									<xs:attribute name="arrivalTime" type="xs:string" use="required"/>
+									<xs:attribute name="availability" type="xs:int" use="required"/>
+									<xs:attribute name="flightNo" type="xs:string" use="required"/>
+									<xs:attribute name="airplaneCode" type="xs:string" use="required"/>
+									<xs:attribute name="dreamliner" type="xs:boolean"/>
+									<xs:attribute name="car" type="xs:boolean"/>
+									<xs:attribute name="meals" type="xs:boolean"/>
+									<xs:attribute name="routeOptionCode" type="xs:string"/>
+									<xs:attribute name="routeOptionAvailability" type="xs:string"/>
+									<xs:attribute name="pricePerAdult" type="xs:string"/>
+									<xs:attribute name="pricePerChildren" type="xs:string"/>
+									<xs:attribute name="flightType" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DURATIONDATESINFO">
+								<xs:annotation>
+									<xs:documentation>Durations and Calendar Response Info</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AVAILABLEDURATIONS" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="durations" type="xs:int" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="CALENDARINFO" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="date" type="xs:date" use="required"/>
+												<xs:attribute name="availability" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="RATINGREVIEWSINFO" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Information about various rating and reviews information</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="rating" type="xs:decimal"/>
+									<xs:attribute name="reviews" type="xs:string"/>
+									<xs:attribute name="percentage" type="xs:decimal"/>
+									<xs:attribute name="category" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FACETINFO" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="FACET" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="code" type="xs:string" use="required"/>
+									<xs:attribute name="name" type="xs:string" use="optional"/>
+									<xs:attribute name="count" type="xs:int" use="required"/>
+									<xs:attribute name="min" type="xs:float" use="optional"/>
+									<xs:attribute name="max" type="xs:float" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="categoryCode" type="xs:string" use="required"/>
+						<xs:attribute name="categoryName" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="packagesCount" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

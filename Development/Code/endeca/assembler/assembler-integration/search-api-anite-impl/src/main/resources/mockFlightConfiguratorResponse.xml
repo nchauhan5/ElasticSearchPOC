@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AvCache Version="4.20.2430" Node="10.78.23.27@0@0">
+	<!--sdate=2015-04-08&edate=2015-04-08&pax_ad=2&s_tp=4&rooms=1&f=Y&h_tp=P&rm_1=1,2&p_tp=TP&stay=8&dep=ARN&pax_ch=1&pax_in=0&ch_age=&accom=231|S&accom_no=1&ch_age=10-->
+	<Status>
+		<Total Count="4"/>
+	</Status>
+	<Result>
+		<Offers Count="4">
+			<Offer Date="2015-04-08" Stay="8" Price="8296.00" PricePP="2765.00" Pkg="ARNLPA3..150408 08 STOLPAS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2015-04-08" Stay="8" Id="231" Code="PRICOL" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[2224-00PRICOL NO221O00000C0001/200000]]>
+					</SysInfo>
+					<Unit Code="C0001" Qty="1" Price="8296.00" PricePP="4148.00" DiscPP="-1650.00" Disc="-3300.00" Board="RO" Avail="11">
+						<SysInfo>
+							<![CDATA[00PRICOL22C0001O00000 1/2          ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0"/>
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30"/>
+							<Pax Id="2" Age="30"/>
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="39">
+					<SysInfo>
+						<![CDATA[A-0008ONLPAARNLPA3..BLX241 150408STO F                                 1 9 ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-01-03" DepTime="1605" ArrPt="DOH" ArrDate="2016-01-03" ArrTime="2205" Avail="30" FltNo="QR168" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="2" DepPt="DOH" DepDate="2016-01-04" DepTime="0055" ArrPt="MLE" ArrDate="2016-01-04" ArrTime="0740" Avail="65" FltNo="QR672" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="3" DepPt="MLE" DepDate="2016-01-18" DepTime="1930" ArrPt="DOH" ArrDate="2016-01-18" ArrTime="2220" Avail="65" FltNo="QR675" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="4" DepPt="DOH" DepDate="2016-01-19" DepTime="0135" ArrPt="ARN" ArrDate="2016-01-19" ArrTime="0615" Avail="30" FltNo="QR169" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-04-08" Stay="8" Price="10002.00" PricePP="3756.00" Pkg="ARNLPA31.150408 08 STOLPAS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2015-04-08" Stay="8" Id="231" Code="PRICOL" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[2224-00PRICOL NO221O00000C0001/200000]]>
+					</SysInfo>
+					<Unit Code="C0001" Qty="1" Price="10002.00" PricePP="5172.00" DiscPP="-1957.00" Disc="-3650.00" Board="RO" Avail="11">
+						<SysInfo>
+							<![CDATA[00PRICOL22C0001O00000 1/2          ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0"/>
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30"/>
+							<Pax Id="2" Age="30"/>
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="39">
+					<SysInfo>
+						<![CDATA[B-0008ONLPAARNLPA3..BLX241 150408STO F                                 1 9 ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-01-03" DepTime="1605" ArrPt="DOH" ArrDate="2016-01-03" ArrTime="2205" Avail="30" FltNo="QR168" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="2" DepPt="DOH" DepDate="2016-01-04" DepTime="0055" ArrPt="MLE" ArrDate="2016-01-04" ArrTime="0740" Avail="65" FltNo="QR672" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="3" DepPt="MLE" DepDate="2016-01-18" DepTime="1930" ArrPt="DOH" ArrDate="2016-01-18" ArrTime="2220" Avail="65" FltNo="QR675" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="4" DepPt="DOH" DepDate="2016-01-19" DepTime="0135" ArrPt="ARN" ArrDate="2016-01-19" ArrTime="0615" Avail="30" FltNo="QR169" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-04-08" Stay="8" Price="8996.00" PricePP="2998.00" Pkg="ARNLPA32.150408 08 STOLPAS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2015-04-08" Stay="8" Id="231" Code="PRICOL" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[2224-00PRICOL NO221O00000C0001/200000]]>
+					</SysInfo>
+					<Unit Code="C0001" Qty="1" Price="8996.00" PricePP="4498.00" DiscPP="-1300.00" Disc="-2600.00" Board="RO" Avail="11">
+						<SysInfo>
+							<![CDATA[00PRICOL22C0001O00000 1/2          ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0"/>
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30"/>
+							<Pax Id="2" Age="30"/>
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="50">
+					<SysInfo>
+						<![CDATA[A-0008ONLPAARNLPA31.BLX215 150408STO F                                 1 9 ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-01-03" DepTime="1605" ArrPt="DOH" ArrDate="2016-01-03" ArrTime="2205" Avail="30" FltNo="BLX215" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="2" DepPt="DOH" DepDate="2016-01-04" DepTime="0055" ArrPt="MLE" ArrDate="2016-01-04" ArrTime="0740" Avail="65" FltNo="BLX241" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="3" DepPt="MLE" DepDate="2016-01-18" DepTime="1930" ArrPt="DOH" ArrDate="2016-01-18" ArrTime="2220" Avail="65" FltNo="BLX216" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="4" DepPt="DOH" DepDate="2016-01-19" DepTime="0135" ArrPt="ARN" ArrDate="2016-01-19" ArrTime="0615" Avail="30" FltNo="BLX220" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+				</Transport>
+			</Offer>
+			<Offer Date="2015-04-08" Stay="8" Price="11996.00" PricePP="4998.00" Pkg="ARNLPA33.150408 08 STOLPAS" Deposit="0.00" WorldCare="Y">
+				<Accom Date="2015-04-08" Stay="8" Id="231" Code="PRICOL" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[2224-00PRICOL NO221O00000C0001/200000]]>
+					</SysInfo>
+					<Unit Code="C0001" Qty="1" Price="11996.00" PricePP="6498.00" DiscPP="-1700.00" Disc="-2800.00" Board="RO" Avail="11">
+						<SysInfo>
+							<![CDATA[00PRICOL22C0001O00000 1/2          ]]>
+						</SysInfo>
+						<Priced Ad="2" Yth="0" Ch="0" In="0"/>
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30"/>
+							<Pax Id="2" Age="30"/>
+						</Occ>
+					</Unit>
+				</Accom>
+				<Transport MinAvail="50">
+					<SysInfo>
+						<![CDATA[B-0008ONLPAARNLPA31.BLX215 150408STO F                                 1 9 ]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-01-03" DepTime="1605" ArrPt="DOH" ArrDate="2016-01-03" ArrTime="2205" Avail="30" FltNo="QR168" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="2" DepPt="DOH" DepDate="2016-01-04" DepTime="0055" ArrPt="MLE" ArrDate="2016-01-04" ArrTime="0740" Avail="65" FltNo="QR672" Dir="O" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="3" DepPt="MLE" DepDate="2016-01-18" DepTime="1930" ArrPt="DOH" ArrDate="2016-01-18" ArrTime="2220" Avail="65" FltNo="QR675" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+					<Route Id="4" DepPt="DOH" DepDate="2016-01-19" DepTime="0135" ArrPt="ARN" ArrDate="2016-01-19" ArrTime="0615" Avail="30" FltNo="QR169" Dir="I" Class=" " Meal="Y">
+						<Option Code="ELR" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+						<Option Code="PRE" Avail="0" PriceAd="0.00" PriceCh="0.00"/>
+					</Route>
+				</Transport>
+			</Offer>
+			<Facets>
+				<Cat Code="CR0001">
+					<Facet Code="CR01" Count="1" Min="7.6" Max="7.6"/>
+				</Cat>
+				<Cat Code="FC0001">
+					<Facet Code="0026" Count="1"/>
+					<Facet Code="0028" Count="1"/>
+					<Facet Code="0198" Count="1"/>
+					<Facet Code="0215" Count="1"/>
+					<Facet Code="0477" Count="1"/>
+					<Facet Code="0047" Count="1"/>
+					<Facet Code="0246" Count="1"/>
+				</Cat>
+				<Cat Code="HR0001">
+					<Facet Code="HR01" Count="1" Min="3.0" Max="3.0"/>
+				</Cat>
+			</Facets>
+			<Lists>
+				<Board>RO</Board>
+				<DepPt>ARN</DepPt>
+				<OutSlots>A</OutSlots>
+				<InSlots>B</InSlots>
+				<Price>8296.00,8996.00</Price>
+				<PricePP>2765.00,2998.00</PricePP>
+				<DreamLiner>N</DreamLiner>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

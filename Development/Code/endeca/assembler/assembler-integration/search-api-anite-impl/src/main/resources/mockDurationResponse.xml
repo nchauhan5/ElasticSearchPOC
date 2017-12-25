@@ -1,0 +1,13 @@
+<AvCache Version="4.5.2121" Node="213.146.183.139@0@0">
+	<!-- sdate=2015-04-10&edate=2015-10-10&pax_ad=2&s_tp=2&h_tp=P&p_tp=TP&prom_no=1&prom=FC&stay=8,15,22&dep=STO,CPH,GOT&pax_ch=0&pax_in=0&ch_age=&accom=000003424|S,000008369|S,000008324|S,00000004|S,000012757|S,000000578|S,000008247|S,000053738|S,00000158|S,000054196|S,000000438|S,00000103|S,000009384|S,000009387|S,000002846|S,000003758|S,00000192|S,00000124|S,000000434|S,00000233|S&accom_no=20 -->
+	<Status>
+		<Total Count="3" />
+	</Status>
+	<Result>
+		<Offers Count="3">
+			<Offer Stay="8" />
+			<Offer Stay="15" />
+			<Offer Stay="22" />
+		</Offers>
+	</Result>
+</AvCache>

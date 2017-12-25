@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+ Copyright (C) 2011 Endeca Technologies, Inc.
+
+ The use of the source code in this file is subject to the ENDECA
+ TECHNOLOGIES, INC. SOFTWARE TOOLS LICENSE AGREEMENT. The full text of the
+ license agreement can be found in the ENDECA INFORMATION ACCESS PLATFORM
+ THIRD-PARTY SOFTWARE USAGE AND LICENSES document included with this software
+ distribution.
+-->
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>A tag library that defines functions needed by discover electronics store application.</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>FunctionTagLibrary</short-name>
+    <uri>/FunctionLibrary</uri>
+  <function>
+    <name>imageGallery</name>
+    <function-class>com.endeca.infront.refapp.support.FunctionTags</function-class>
+    <function-signature>java.util.List getImageGallary(com.endeca.infront.cartridge.model.Record)</function-signature>
+  </function>
+  <function>
+    <name>pagination</name>
+    <function-class>com.endeca.infront.refapp.support.FunctionTags</function-class>
+    <function-signature>com.endeca.infront.refapp.support.Pagination getPagination(com.endeca.infront.cartridge.ResultsList, int, java.lang.String)</function-signature>
+  </function>
+  <function>
+    <name>changeRecordsPerPage</name>
+    <function-class>com.endeca.infront.refapp.support.FunctionTags</function-class>
+    <function-signature>java.lang.String getPaginationAction(java.lang.String, int, int)</function-signature>
+  </function>
+</taglib>

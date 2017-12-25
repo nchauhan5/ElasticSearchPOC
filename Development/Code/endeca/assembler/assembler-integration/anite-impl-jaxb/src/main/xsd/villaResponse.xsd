@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 (x64) (http://www.altova.com) by Lee Miller (Anite) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="AvCache">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Status" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Total" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:attribute name="Count" type="xs:unsignedInt"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Result" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Offers" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Offer" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Accom" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Unit" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Priced" minOccurs="1" maxOccurs="1">
+																				<xs:complexType>
+																					<xs:attribute name="Ad" type="xs:unsignedByte" use="required"/>
+																					<xs:attribute name="Ch" type="xs:unsignedByte" use="optional"/>
+																					<xs:attribute name="In" type="xs:unsignedByte" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Occ" minOccurs="1" maxOccurs="1">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="Pax" maxOccurs="unbounded">
+																							<xs:complexType>
+																								<xs:attribute name="Id" type="xs:string" use="required"/>
+																								<xs:attribute name="Age" type="xs:unsignedInt" use="optional"/>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="Ad" type="xs:unsignedByte" use="required"/>
+																					<xs:attribute name="Ch" type="xs:unsignedByte" use="optional"/>
+																					<xs:attribute name="In" type="xs:unsignedByte" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Code" type="xs:string" use="required"/>
+																		<xs:attribute name="Name" type="xs:string" use="optional"/>
+																		<xs:attribute name="Qty" type="xs:unsignedInt" use="required"/>
+																		<xs:attribute name="Price" type="xs:decimal" use="required"/>
+																		<xs:attribute name="PricePP" type="xs:decimal" use="required"/>
+																		<xs:attribute name="Disc" type="xs:decimal" use="optional"/>
+																		<xs:attribute name="DiscPP" type="xs:decimal" use="optional"/>
+																		<xs:attribute name="Board" type="xs:string" use="required"/>
+																		<xs:attribute name="Avail" type="xs:unsignedInt" use="required"/>
+																		<xs:attribute name="Dc" type="YesNo" use="optional"/>
+																		<xs:attribute name="Tracs" type="xs:string" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Date" type="xs:date" use="required"/>
+															<xs:attribute name="Stay" type="xs:unsignedByte" use="required"/>
+															<xs:attribute name="Id" type="xs:string" use="required"/>
+															<xs:attribute name="Code" type="xs:string" use="required"/>
+															<xs:attribute name="Name" type="xs:string" use="optional"/>
+															<xs:attribute name="Brand" type="xs:string" use="optional"/>
+															<xs:attribute name="Rating" use="optional"/>
+															<xs:attribute name="CommPri" type="xs:string" use="required"/>
+															<xs:attribute name="Tracs" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="AltBoard" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Board" minOccurs="0" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="Code" type="xs:string" use="required"/>
+																		<xs:attribute name="Price" type="xs:decimal" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Transport" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Route" maxOccurs="2">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Option" minOccurs="0" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:attribute name="Code" type="RouteOptionCode" use="required"/>
+																					<xs:attribute name="Avail" type="xs:unsignedInt" use="optional"/>
+																					<xs:attribute name="PriceAd" type="xs:decimal" use="optional"/>
+																					<xs:attribute name="PriceCh" type="xs:decimal" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Id" type="xs:string" use="required"/>
+																		<xs:attribute name="DepPt" type="xs:string" use="required"/>
+																		<xs:attribute name="DepDate" type="xs:date" use="required"/>
+																		<xs:attribute name="DepTime" type="xs:string" use="required"/>
+																		<xs:attribute name="ArrPt" type="xs:string" use="required"/>
+																		<xs:attribute name="ArrDate" type="xs:date" use="required"/>
+																		<xs:attribute name="ArrTime" type="xs:string" use="required"/>
+																		<xs:attribute name="Avail" type="xs:unsignedInt" use="required"/>
+																		<xs:attribute name="FltNo" type="xs:string" use="required"/>
+																		<xs:attribute name="Equip" type="xs:string" use="optional"/>
+																		<xs:attribute name="Dreamliner" type="YesNo" use="optional"/>
+																		<xs:attribute name="Meal" type="YesNo" use="optional"/>
+																		<xs:attribute name="Ext" type="xs:string" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="MinAvail" type="xs:unsignedInt" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="Date" type="xs:date" use="required"/>
+												<xs:attribute name="Stay" type="xs:unsignedByte" use="required"/>
+												<xs:attribute name="Price" type="xs:decimal" use="required"/>
+												<xs:attribute name="PricePP" type="xs:decimal" use="required"/>
+												<xs:attribute name="Deposit" type="xs:decimal" use="required"/>
+												<xs:attribute name="CoachTransfer" type="YesNo" use="optional"/>
+												<xs:attribute name="CarHire" type="YesNo" use="optional"/>
+												<xs:attribute name="WorldCare" type="YesNo" use="optional"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Facets" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Cat" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Facet" minOccurs="1" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="Code" type="xs:string" use="required"/>
+																		<xs:attribute name="Count" type="xs:unsignedInt" use="required"/>
+																		<xs:attribute name="Min" type="xs:decimal" use="optional"/>
+																		<xs:attribute name="Max" type="xs:decimal" use="optional"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Code" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Lists" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Board" type="xs:string" minOccurs="0"/>
+													<xs:element name="DepPt" type="xs:string" minOccurs="0"/>
+													<xs:element name="OutSlots" type="xs:string" minOccurs="0"/>
+													<xs:element name="InSlots" type="xs:string" minOccurs="0"/>
+													<xs:element name="Price" type="xs:string" minOccurs="0"/>
+													<xs:element name="PricePP" type="xs:string" minOccurs="0"/>
+													<xs:element name="DreamLiner" type="YesNo" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Dc" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="YesNo">
+																	<xs:attribute name="Date" type="xs:date"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Count" type="xs:unsignedInt"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Error" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="Code" use="required"/>
+						<xs:attribute name="Text" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:string"/>
+			<xs:attribute name="Node" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="YesNo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Y"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RouteOptionCode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ELR"/>
+			<xs:enumeration value="PRE"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

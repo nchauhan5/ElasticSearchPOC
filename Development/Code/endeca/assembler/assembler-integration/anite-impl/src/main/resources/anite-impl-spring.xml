@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+	<bean id="aniteImplPropertiesPlaceholder"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:anite-impl-spring.properties" />
+	</bean>
+
+	<bean id="aniteImplPropertiesConfigurer"
+		class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="location" value="classpath:anite-impl-spring.properties" />
+		<property name="ignoreInvalidKeys" value="true" />
+	</bean>
+
+	<bean name="defaultAniteInterface" class="com.endeca.tui.anite.impl.DefaultAniteImplementation"
+		scope="singleton">
+		<property name="responseStreamBuilder" ref="aniteHttpResponseStreamBuilder" />
+		<property name="unmarshaller" ref="searchAPIAniteResponseStreamUnmarshaller" />
+	</bean>
+
+	<bean name="sampleResponsesAniteInterface" parent="defaultAniteInterface"
+		class="com.endeca.tui.anite.impl.DefaultAniteImplementation">
+		<property name="responseStreamBuilder" ref="aniteResponseStreamBuilderFromFile" />
+	</bean>
+
+	<bean id="bufferingAniteInterface" class="com.endeca.tui.anite.impl.BufferingAniteImplementation"
+		parent="defaultAniteInterface" scope="singleton">
+		<property name="responseBufferFactory">
+			<bean class="com.endeca.tui.anite.ConfigurableResponseBufferFactory">
+				<property name="memoryBacked" value="true" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="browseAniteInterface" parent="${aniteInterfaceImplementation}" />
+	<bean id="searchAniteInterface" parent="${aniteInterfaceImplementation}" />
+
+	<bean id="aniteInterfaceProvider"
+		class="com.endeca.tui.anite.SearchAndBrowseAniteInterfaceProvider"
+		scope="singleton">
+		<property name="browseAniteInterface" ref="browseAniteInterface" />
+		<property name="searchAniteInterface" ref="searchAniteInterface" />
+	</bean>
+
+	<bean id="rawAniteInterface" factory-bean="aniteInterfaceProvider"
+		factory-method="getSearchAniteInterface" scope="prototype">
+	</bean>
+
+	<bean id="durationsLimitWorkaroundAniteInterface" name="aniteInterface"
+		class="com.endeca.tui.anite.impl.DurationsLimitAniteImplementation"
+		scope="prototype">
+		<property name="maxDurations" value="7" />
+		<property name="backingAniteInterface" ref="cachingAniteInterface" />
+	</bean>
+
+	<bean id="coalescingAniteCacheStats" class="com.endeca.tui.anite.CacheStats" />
+
+	<bean id="cachingAniteInterface" scope="prototype"
+		class="com.endeca.tui.anite.impl.RequestScopedCachingAniteInterface">
+		<property name="backingAniteInterface" ref="rawAniteInterface" />
+		<property name="cacheStatsCallback" ref="coalescingAniteCacheStats"></property>
+	</bean>
+
+	<bean id="unmarshaller" scope="singleton"
+		class="com.endeca.tui.anite.unmarshall.impl.AniteJaxbResponseStreamUnmarshaller">
+	</bean>
+
+	<bean id="aniteResponseStreamBuilderFromFile"
+		class="com.endeca.tui.anite.io.file.AniteResponseStreamBuilderFromFile">
+		<property name="responseMap">
+			<map>
+				<entry key="LIST_BY_ACCOMMODATION" value="listByAccommodationCode.xml" />
+				<entry key="CALENDAR" value="aniteCalendarResponse.xml" />
+				<entry key="DURATIONS" value="aniteDurationsResponse.xml" />
+				<entry key="SINGLE_ACCOMM_ALTERNATIVE_FLIGHTS" value="singleAccommodation.xml" />
+				<entry key="LIST_BY_PACKAGEPRODUCTS" value="flightclass.xml" />
+				<entry key="SINGLE_ACCOMM_ALL_ROOMS" value="dapc_response_request_type-6.xml" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="aniteHttpResponseStreamBuilder"
+		class="com.endeca.tui.anite.io.http.AniteHttpResponseStreamBuilder"
+		scope="prototype">
+		<property name="httpClient" ref="httpClient" />
+		<property name="aniteUri" value="${anite.url}" />
+		<property name="aniteParamsHttpParamsConverter" ref="aniteParamsHttpParamsConverter" />
+	</bean>
+
+	<bean id="aniteParamsHttpParamsConverter"
+		class="com.endeca.tui.anite.io.http.AniteParamsHttpParamsConverter">
+	</bean>
+
+
+	<bean id="httpClient" class="org.apache.http.impl.client.ContentEncodingHttpClient"
+		scope="singleton">
+		<constructor-arg ref="httpClientConnectionManager" />
+		<constructor-arg ref="httpParams" />
+	</bean>
+
+	<bean id="httpParamsFactory" class="com.endeca.tui.anite.io.http.HttpParamsFactory"
+		scope="singleton" />
+	<bean id="httpParams" factory-bean="httpParamsFactory"
+		factory-method="buildHttpParams" scope="singleton" />
+
+	<bean id="httpClientConnectionManager"
+		class="org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager"
+		scope="singleton">
+		<property name="defaultMaxPerRoute" value="1000" />
+		<property name="maxTotal" value="1100" />
+	</bean>
+
+	<!-- Define the SOAP version used by the WSDL -->
+	<bean id="soapMessageFactory" class="org.springframework.ws.soap.saaj.SaajSoapMessageFactory">
+		<property name="soapVersion">
+			<util:constant static-field="org.springframework.ws.soap.SoapVersion.SOAP_11" />
+		</property>
+	</bean>
+
+	<!-- The location of the generated Java files -->
+	<oxm:jaxb2-marshaller id="marshaller">
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.COXML09" />
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.Coxml09Crsheaderinfo" />
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.Coxml09CrsheaderinfoIdentificationinfo" />
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.Coxml09Crsuserdata" />
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.Coxml09CrsuserdataSearchmealrq" />
+		<oxm:class-to-be-bound
+			name="com.saxml09i.schemas.saxml09iinterface.Coxml09CrsuserdataSearchmealrqSearchages" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.COXML09" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09Crsheaderinfo" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsheaderinfoIdentificationinfo" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09Crsuserdata" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrs" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrsAvailableboard" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrsAvailableboardAllinclusive" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrsAvailableboardBreakfast" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrsAvailableboardFullboard" />
+		<oxm:class-to-be-bound
+			name="com.saxml09o.schemas.saxml09ointerface.Coxml09CrsuserdataSearchmealrsAvailableboardHalfboard" />
+	</oxm:jaxb2-marshaller>
+
+	<!-- Configure Spring Web Services -->
+	<bean id="webServiceTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+		<constructor-arg ref="soapMessageFactory" />
+		<property name="marshaller" ref="marshaller" />
+		<property name="unmarshaller" ref="marshaller" />
+		<property name="defaultUri" value="${crs.accommodation.boards.url}" />
+		<property name="messageSender">
+			<bean
+				class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+				<property name="connectionTimeout" value="8000" />
+				<property name="readTimeout" value="8000" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Service to get available board Basis from CRS -->
+	<bean id="crsSoapService"
+		class="com.endeca.search.api.crs.accom.board.service.impl.CRSAccomBoardServiceImpl">
+		<property name="configuredBoardBasis">
+			<map>
+				<entry key="AllInclusive">
+					<value>LIBO-000411</value>
+				</entry>
+				<entry key="Breakfast">
+					<value>LIBO-000408</value>
+				</entry>
+				<entry key="FullBoard">
+					<value>LIBO-000410</value>
+				</entry>
+				<entry key="HalfBoard">
+					<value>LIBO-000409</value>
+				</entry>
+			</map>
+		</property>
+		<property name="webServiceTemplate" ref="webServiceTemplate" />
+		<property name="brandSpecificRequestMap" ref="brandSpecificRequestMap" />
+	</bean>
+
+	<util:map id="brandSpecificRequestMap">
+		<entry key="S" value-ref="SERequestMap"></entry>
+		<entry key="N" value-ref="NORequestMap"></entry>
+		<entry key="D" value-ref="DKRequestMap"></entry>
+		<entry key="F" value-ref="FLRequestMap"></entry>
+	</util:map>
+
+	<util:map id="SERequestMap">
+		<entry key="codePage" value="${SEBlue.code.page}"></entry>
+		<entry key="agentNo" value="${SEBlue.agent.no}"></entry>
+		<entry key="currencyCode" value="${SEBlue.currency.code}"></entry>
+		<entry key="textLanguage" value="${SEBlue.text.language}"></entry>
+		<entry key="defaultMarket" value="${SEBlue.default.market}"></entry>
+		<entry key="currentMarket" value="${SEBlue.current.market}"></entry>
+		<entry key="systemEnvironment" value="${crs.accommodation.boards.environment.type}"></entry>
+	</util:map>
+
+	<util:map id="NORequestMap">
+		<entry key="codePage" value="${NOBlue.code.page}"></entry>
+		<entry key="agentNo" value="${NOBlue.agent.no}"></entry>
+		<entry key="currencyCode" value="${NOBlue.currency.code}"></entry>
+		<entry key="textLanguage" value="${NOBlue.text.language}"></entry>
+		<entry key="defaultMarket" value="${NOBlue.default.market}"></entry>
+		<entry key="currentMarket" value="${NOBlue.current.market}"></entry>
+		<entry key="systemEnvironment" value="${crs.accommodation.boards.environment.type}"></entry>
+	</util:map>
+
+	<util:map id="DKRequestMap">
+		<entry key="codePage" value="${DKBlue.code.page}"></entry>
+		<entry key="agentNo" value="${DKBlue.agent.no}"></entry>
+		<entry key="currencyCode" value="${DKBlue.currency.code}"></entry>
+		<entry key="textLanguage" value="${DKBlue.text.language}"></entry>
+		<entry key="defaultMarket" value="${DKBlue.default.market}"></entry>
+		<entry key="currentMarket" value="${DKBlue.current.market}"></entry>
+		<entry key="systemEnvironment" value="${crs.accommodation.boards.environment.type}"></entry>
+	</util:map>
+
+	<util:map id="FLRequestMap">
+		<entry key="codePage" value="${FLBlue.code.page}"></entry>
+		<entry key="agentNo" value="${FLBlue.agent.no}"></entry>
+		<entry key="currencyCode" value="${FLBlue.currency.code}"></entry>
+		<entry key="textLanguage" value="${FLBlue.text.language}"></entry>
+		<entry key="defaultMarket" value="${FLBlue.default.market}"></entry>
+		<entry key="currentMarket" value="${FLBlue.current.market}"></entry>
+		<entry key="systemEnvironment" value="${crs.accommodation.boards.environment.type}"></entry>
+	</util:map>
+</beans>

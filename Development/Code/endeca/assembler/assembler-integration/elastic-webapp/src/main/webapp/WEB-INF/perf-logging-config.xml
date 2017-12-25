@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ~ Copyright 2001, 2012, Oracle and/or its affiliates. All rights reserved.
+    ~ Oracle and Java are registered trademarks of Oracle and/or its
+    ~ affiliates. Other names may be trademarks of their respective owners.
+    ~ UNIX is a registered trademark of The Open Group.
+    ~
+    ~ This software and related documentation are provided under a license
+    ~ agreement containing restrictions on use and disclosure and are
+    ~ protected by intellectual property laws. Except as expressly permitted
+    ~ in your license agreement or allowed by law, you may not use, copy,
+    ~ reproduce, translate, broadcast, modify, license, transmit, distribute,
+    ~ exhibit, perform, publish, or display any part, in any form, or by any
+    ~ means. Reverse engineering, disassembly, or decompilation of this
+    ~ software, unless required by law for interoperability, is prohibited.
+    ~ The information contained herein is subject to change without notice
+    ~ and is not warranted to be error-free. If you find any errors, please
+    ~ report them to us in writing.
+    ~ U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+    ~ system, integrated software, any programs installed on the hardware,
+    ~ and/or documentation, delivered to U.S. Government end users are
+    ~ "commercial computer software" pursuant to the applicable Federal
+    ~ Acquisition Regulation and agency-specific supplemental regulations.
+    ~ As such, use, duplication, disclosure, modification, and adaptation
+    ~ of the programs, including any operating system, integrated software,
+    ~ any programs installed on the hardware, and/or documentation, shall be
+    ~ subject to license terms and license restrictions applicable to the
+    ~ programs. No other rights are granted to the U.S. Government.
+    ~ This software or hardware is developed for general use in a variety
+    ~ of information management applications. It is not developed or
+    ~ intended for use in any inherently dangerous applications, including
+    ~ applications that may create a risk of personal injury. If you use
+    ~ this software or hardware in dangerous applications, then you shall
+    ~ be responsible to take all appropriate fail-safe, backup, redundancy,
+    ~ and other measures to ensure its safe use. Oracle Corporation and its
+    ~ affiliates disclaim any liability for any damages caused by use of this
+    ~ software or hardware in dangerous applications.
+    ~ This software or hardware and documentation may provide access to or
+    ~ information on content, products, and services from third parties.
+    ~ Oracle Corporation and its affiliates are not responsible for and
+    ~ expressly disclaim all warranties of any kind with respect to
+    ~ third-party content, products, and services. Oracle Corporation and
+    ~ its affiliates will not be responsible for any loss, costs, or damages
+    ~ incurred due to your access to or use of third-party content, products,
+    ~ or services.
+-->
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="ParentHandlerConfiguration" class="com.endeca.infront.assembler.perf.config.LoggableEventConfiguration">
+        <property name="events">
+            <list>
+                <value>Initialize</value>
+                <value>PreProcess</value>
+                <value>Process</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ParentRequestConfiguration" class="com.endeca.infront.assembler.perf.config.LoggableEventConfiguration">
+        <property name="events">
+            <list>
+                <value>Execute</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ParentSerializeConfiguration" class="com.endeca.infront.assembler.perf.config.LoggableEventConfiguration">
+        <property name="events">
+            <list>
+                <value>Write</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="ParentContentSourceConfiguration" class="com.endeca.infront.assembler.perf.config.LoggableEventConfiguration">
+        <property name="events">
+            <list>
+                <value>GetContent</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="eventsConfig"
+        class="com.endeca.infront.assembler.perf.config.RecordedEventsConfiguration"
+        scope="singleton">
+        <property name="recordedEvents">
+            <list>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.ContentSlotHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.BreadcrumbsHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.MediaBannerHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.DimensionSearchResultsHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.SearchAdjustmentsHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.SearchBoxHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.RecordDetailsHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.search.cartridge.handler.ResultsListHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.RecordSpotlightHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.ContentIncludeHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.cartridge.RefinementMenuHandler" />
+                </bean>
+                <bean parent="ParentHandlerConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.mobile.cartridge.MobileResultsListHandler" />
+                </bean>
+                <bean parent="ParentRequestConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.navigation.request.support.NavigationRequest" />
+                </bean>
+                <bean parent="ParentRequestConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.navigation.request.support.RecordRequest" />
+                </bean>
+                <bean parent="ParentSerializeConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.serialization.XmlSerializer" />
+                </bean>
+                <bean parent="ParentSerializeConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.serialization.JsonSerializer" />
+                </bean>
+                <bean parent="ParentContentSourceConfiguration">
+                    <property name="className" value="com.endeca.infront.content.source.AuthoringContentSource" />
+                </bean>
+                <bean parent="ParentContentSourceConfiguration">
+                    <property name="className" value="com.endeca.infront.content.source.LiveContentSource" />
+                </bean>
+                <bean
+                    class="com.endeca.infront.assembler.perf.config.LoggableEventConfiguration">
+                    <property name="className"
+                        value="com.endeca.infront.content.support.XmlContentItem" />
+                    <property name="events">
+                        <list>
+                            <value>Parse</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="statsListener"
+        class="com.endeca.infront.assembler.perf.serializers.StatsPageTimeEventSerializer"
+        scope="singleton">
+        <!-- The events to be logged -->
+        <constructor-arg ref="eventsConfig" />
+    </bean>
+
+    <!--
+        Uncomment to enable performance logging to a file.
+        The constructor arguments are, in order:
+            * A pattern describing where to put the log file
+            * The types of event to log
+            * The number of log files to cycle through
+            * The maximum size, in megabytes, of each log file
+		Verify that the directory permissions allow creation and modification of the log file.  
+		To place the log file into the /logs directory of the application, modify the log file argument
+		to use the absolute pathname of that directory.
+		Should only be enabled in a testing environment.
+    -->
+    
+    <bean id="loggingPerfEventListener" class="com.endeca.infront.assembler.perf.serializers.PerfLogTimeEventSerializer"
+        scope="singleton">
+        <constructor-arg value="opt/endeca/tomcat/logs/assembler-perf.%g.log" />
+        <constructor-arg ref="eventsConfig" />
+        <constructor-arg value="5"/>
+        <constructor-arg value="1000"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass">
+            <value>com.endeca.infront.assembler.perf.AssemblerPerfUtils</value>
+        </property>
+        <property name="targetMethod">
+            <value>addEventSerializer</value>
+        </property>
+        <property name="arguments">
+            <list>
+                <ref bean="loggingPerfEventListener" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetClass">
+            <value>com.endeca.infront.assembler.perf.AssemblerPerfUtils</value>
+        </property>
+        <property name="targetMethod">
+            <value>addEventSerializer</value>
+        </property>
+        <property name="arguments">
+            <list>
+                <ref bean="statsListener" />
+            </list>
+        </property>
+    </bean>
+
+</beans>

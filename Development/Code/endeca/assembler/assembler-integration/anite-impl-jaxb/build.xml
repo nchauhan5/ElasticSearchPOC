@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+
+
+<project name="anite-impl-jaxb" default="all" basedir=".">
+
+	<!-- ====================================================================== -->
+	<!-- Build environment properties                                           -->
+	<!-- ====================================================================== -->
+
+
+	<property file="build.properties" />
+
+	<property name="build.finalName.jaxb" value="anite-impl-jaxb-0.2.51-SNAPSHOT" />
+	<property name="build.dir" value="target" />
+	<property name="build.outputDir" value="${build.dir}/classes" />
+	<property name="build.srcDir.0" value="src/main/java" />
+	<property name="build.resourceDir.0" value="src/main/resources" />
+	<property name="repo.local" value="../lib" />
+	<property name="reporting.outputDirectory" value="${build.dir}/site" />
+
+
+	<!-- ====================================================================== -->
+	<!-- Defining classpaths                                                    -->
+	<!-- ====================================================================== -->
+
+	<path id="build.classpath">
+		<pathelement location="../anite-api/target/anite-api-0.2.51-SNAPSHOT.jar" />
+		<fileset dir="${repo.local}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+		<classpath>
+			<fileset dir="${repo.local}">
+				<include name="**/*.jar" />
+			</fileset>
+		</classpath>
+	</taskdef>
+
+
+	<!-- ====================================================================== -->
+	<!-- Cleaning up target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="clean" description="Clean the output directory">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Compilation target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="compile" description="Compile the code">
+		<mkdir dir="src/main/java" />
+		<xjc destdir="src/main/java" schema="src/main/xsd/aniteResponse.xsd" removeOldOutput="yes" package="com.endeca.tui.anite.response">
+		</xjc>
+		<xjc destdir="src/main/java" schema="src/main/xsd/aniteCalendarResponse.xsd" removeOldOutput="yes" package="com.endeca.tui.anite.response.calendar">
+		</xjc>
+		<xjc destdir="src/main/java" schema="src/main/xsd/aniteDurationsResponse.xsd" removeOldOutput="yes" package="com.endeca.tui.anite.response.durations">
+		</xjc>
+		<mkdir dir="${build.outputDir}" />
+		<javac destdir="${build.outputDir}" nowarn="false" debug="true" optimize="false" deprecation="true" target="1.6" verbose="false" fork="false" source="1.6" includeantruntime="false">
+			<compilerarg value="-Xlint" />
+			<src>
+				<pathelement location="${build.srcDir.0}" />
+			</src>
+			<classpath refid="build.classpath" />
+		</javac>
+
+		<!--	<xjc destdir="src/main/java" schema="src/main/xsd/aniteResponse.xsd" removeOldOutput="yes" package="com.endeca.tui.anite.response">
+		</xjc>  -->
+	</target>
+
+
+	<!-- ====================================================================== -->
+	<!-- Javadoc target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="javadoc" description="Generates the Javadoc of the application">
+		<javadoc sourcepath="${build.srcDir.0}" packagenames="*" destdir="${reporting.outputDirectory}/apidocs" access="protected" old="false" verbose="false" version="true" use="true" author="true" splitindex="false" nodeprecated="false" nodeprecatedlist="false" notree="false" noindex="false" nohelp="false" nonavbar="false" serialwarn="false" charset="ISO-8859-1" linksource="false" breakiterator="false" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Package target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="all" depends="compile" description="Package the application">
+
+		<jar jarfile="${build.dir}/${build.finalName.jaxb}.jar" compress="true" index="false" basedir="${build.outputDir}" excludes="**/package.html" />
+
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- A dummy target for the package named after the type it creates         -->
+	<!-- ====================================================================== -->
+
+	<target name="jar" depends="all" description="Builds the jar for the application" />
+
+</project>

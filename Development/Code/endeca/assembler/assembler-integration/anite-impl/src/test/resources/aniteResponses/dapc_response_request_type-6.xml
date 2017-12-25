@@ -1,0 +1,58 @@
+<AvCache Version="1.0">
+	<Status>
+		<Total Count="2"/>
+	</Status>
+	<Result>
+		<Offers Count="2">
+			<Offer Date="2016-07-16" Stay="8" Price="15221.00" PricePP="7610.00" Pkg="DARNNCE6.160716 08 STONCES/3ad8e677db4da7a9fdbd8bc38d8349eb/166209/SEFL" Deposit="13160.00" WorldCare="Y">
+				<Accom Date="2016-07-16" Stay="8" Id="166209" Code="CANAMC" Ext="Y" Brand="S" CommPri="0">
+					<SysInfo>
+						<![CDATA[ 66298-00CANAMC NODR0O00000C0101 00000 ]]>
+					</SysInfo>
+					<Unit Code="C0102" Qty="1" Price="8141.00" PricePP="4070.00" DiscPP="0.00" Disc="0.00" Board="408" Avail="99">
+						<SysInfo>
+							<![CDATA[ 00CANAMCDRC0101O00000 0 ]]>
+						</SysInfo>
+						<SrcInfo Accom="6214" Unit="ZSR" Board="BB-E10" System="HB2"/>
+						<Priced Ad="2" Yth="0" Ch="0" In="0"/>
+						<Occ Ad="2" Yth="0" Ch="0" In="0">
+							<Pax Id="1" Age="30"/>
+							<Pax Id="2" Age="30"/>
+						</Occ>
+					</Unit>
+				</Accom>
+				<AltBoard>
+					<Board Code="412" Price="15596.04">
+						<SrcInfo Code="RO-E10"/>
+					</Board>
+				</AltBoard>
+				<Transport MinAvail="4" PriceFlt="13160.00" PriceMkup="7080.00">
+					<SysInfo>
+						<![CDATA[
+-0008LONCEDARNNCE6.EXT1 160716STO G J 1 C
+]]>
+					</SysInfo>
+					<Route Id="1" DepPt="ARN" DepDate="2016-07-16" DepTime="0630" ArrPt="DUS" ArrDate="2016-07-16" ArrTime="0830" Avail="9" FltNo="AB8011" Car="AB" Ext="Y" Dir="O" Class="M" Fare="N"/>
+					<Route Id="2" DepPt="DUS" DepDate="2016-07-16" DepTime="1220" ArrPt="NCE" ArrDate="2016-07-16" ArrTime="1405" Avail="9" FltNo="AB8330" Car="AB" Ext="Y" Dir="O" Class="M" Fare="N"/>
+					<Route Id="3" DepPt="NCE" DepDate="2016-07-23" DepTime="1450" ArrPt="DUS" ArrDate="2016-07-23" ArrTime="1625" Avail="4" FltNo="AB8331" Car="AB" Ext="Y" Dir="I" Class="M" Fare="N"/>
+					<Route Id="4" DepPt="DUS" DepDate="2016-07-23" DepTime="2045" ArrPt="ARN" ArrDate="2016-07-23" ArrTime="2245" Avail="4" FltNo="AB8010" Car="AB" Ext="Y" Dir="I" Class="M" Fare="N"/>
+				</Transport>
+			</Offer>
+			<Facets>
+				<Cat Code="TMP">
+					<Facet Code="HIGH" Count="2" Min="10.0" Max="30.0"/>
+				</Cat>
+			</Facets>
+			<Lists>
+				<Board>BB,HB,FB,AI</Board>
+				<DepPt>LGW,STN</DepPt>
+				<OutSlots>A,B</OutSlots>
+				<InSlots>A,C</InSlots>
+				<Price>1200,1800</Price>
+				<PricePP>200,300</PricePP>
+				<DreamLiner>Y</DreamLiner>
+				<Dc Date="2012-08-10">Y</Dc>
+			</Lists>
+		</Offers>
+	</Result>
+</AvCache>

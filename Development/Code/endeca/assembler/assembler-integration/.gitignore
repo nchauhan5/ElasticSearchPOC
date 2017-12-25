@@ -1,0 +1,7 @@
+target
+build
+/lib/*.jar
+/.idea/libraries
+/.gradle
+*.iml
+assembler-context.xml

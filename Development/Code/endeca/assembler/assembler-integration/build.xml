@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+
+<project name="assembler-integration" default="all" basedir=".">
+
+  <!-- ====================================================================== -->
+  <!-- Cleaning up target                                                     -->
+  <!-- ====================================================================== -->
+
+  <target name="clean" description="Clean the output directory">
+    <ant antfile="build.xml" dir="anite-api" target="clean"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="clean"/>
+    <ant antfile="build.xml" dir="anite-impl" target="clean"/>
+	<ant antfile="build.xml" dir="search-api" target="clean"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="clean"/>
+    <ant antfile="build.xml" dir="cache-webapp" target="clean"/>
+	<ant antfile="build_assembler.xml" dir="elastic-webapp" target="clean"/>
+  </target>
+
+  <!-- ====================================================================== -->
+  <!-- Compilation target                                                     -->
+  <!-- ====================================================================== -->
+
+  <target name="compile" description="Compile the code">
+    <ant antfile="build.xml" dir="anite-api" target="compile"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="compile"/>
+    <ant antfile="build.xml" dir="anite-impl" target="compile"/>
+	<ant antfile="build.xml" dir="search-api" target="compile"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="compile"/>
+    <ant antfile="build.xml" dir="cache-webapp" target="compile"/>
+  </target>
+
+  <!-- ====================================================================== -->
+  <!-- Javadoc target                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="javadoc" description="Generates the Javadoc of the application">
+    <ant antfile="build.xml" dir="anite-api" target="javadoc"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="javadoc"/>
+    <ant antfile="build.xml" dir="anite-impl" target="javadoc"/>
+	<ant antfile="build.xml" dir="search-api" target="javadoc"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="javadoc"/>
+    <ant antfile="build.xml" dir="cache-webapp" target="javadoc"/>
+  </target>
+  <!-- ====================================================================== -->
+  <!-- Junit target                                                         -->
+  <!-- ====================================================================== -->
+  <target name="Junit" description="Run unit test cases">
+   <ant antfile="build.xml" dir="anite-impl" target="junit"/>
+   <ant antfile="build.xml" dir="search-api-anite-impl" target="junit"/>
+   <ant antfile="build.xml" dir="cache-webapp" target="junit"/>
+   </target>
+
+  <!-- ====================================================================== -->
+  <!-- Package target                                                         -->
+  <!-- ====================================================================== -->
+
+  <target name="all" description="Package the application">
+    <ant antfile="build.xml" dir="anite-api" target="all"/>
+    <ant antfile="build.xml" dir="anite-impl-jaxb" target="all"/>
+    <ant antfile="build.xml" dir="anite-impl" target="all"/>
+	<ant antfile="build.xml" dir="search-api" target="all"/>
+	<ant antfile="build.xml" dir="search-api-anite-impl" target="all"/>
+    <ant antfile="build.xml" dir="cache-webapp" target="all"/>
+  </target>
+
+</project>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====================================================================== -->
+<!-- Ant build file (http://ant.apache.org/) for Ant 1.6.2 or above.        -->
+<!-- ====================================================================== -->
+
+
+
+<project name="anite-impl" default="all" basedir=".">
+
+	<!-- ====================================================================== -->
+	<!-- Build environment properties                                           -->
+	<!-- ====================================================================== -->
+
+
+	<property file="build.properties" />
+
+	<property name="build.finalName.impl" value="anite-impl-0.2.51-SNAPSHOT" />
+	<property name="build.dir" value="target" />
+	<property name="build.outputDir" value="${build.dir}/classes" />
+	<property name="build.srcDir.0" value="src/main/java" />
+	<property name="build.resourceDir.0" value="src/main/resources" />
+        <property name="build.testResourceDir.0" value="src/test/resources" /> 
+	<property name="repo.local" value="../lib" />
+	<property name="reporting.outputDirectory" value="${build.dir}/site" />
+	    <!-- Variables used for JUnit testin -->
+        <property name="test.dir" location="src/test/java" />
+        <property name="test.report.dir" location="testreport" />
+        <property name="build.test.dir" location="${build.dir}/tests" />
+        <property name="instrumented.dir" location="instrumented" />
+        <property name="coveragereport.dir" location="coveragereport" />
+        <property name="cobertura.dir" value="../lib/exclude" />
+
+
+
+
+	<!-- ====================================================================== -->
+	<!-- Defining classpaths                                                    -->
+	<!-- ====================================================================== -->
+
+	<path id="build.classpath">
+		<pathelement location="../anite-api/target/anite-api-0.2.51-SNAPSHOT.jar" />
+        <pathelement location="../anite-impl-jaxb/target/anite-impl-jaxb-0.2.51-SNAPSHOT.jar"/>
+		<fileset dir="${repo.local}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<!-- Define the classpath which includes the junit.jar and the classes after compiling-->
+	<path id="junit.class.path">
+	<pathelement location="../lib/exclude/junit.jar" />
+	<pathelement location="${build.outputDir}" />
+	</path>
+
+	<path id="cobertura.classpath">
+		<fileset dir="${cobertura.dir}">
+		<include name="cobertura-1.9.4.1.jar" />
+		<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />	
+
+
+	<!-- ====================================================================== -->
+	<!-- Cleaning up target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="clean" description="Clean the output directory">
+		<delete dir="${build.dir}" />
+		<delete dir="${test.report.dir}" />
+		<delete dir="${instrumented.dir}" />
+		<delete dir="${coveragereport.dir}" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Compilation target                                                     -->
+	<!-- ====================================================================== -->
+
+	<target name="compile" description="Compile the code">
+		<mkdir dir="${build.outputDir}" />
+		<javac destdir="${build.outputDir}"
+		       nowarn="false"
+		       debug="true"
+		       optimize="false"
+		       deprecation="true"
+		       target="1.6"
+		       verbose="false"
+		       fork="false"
+		       source="1.6"
+		       includeantruntime="false">
+			<compilerarg value="-Xlint" />
+			<src>
+				<pathelement location="${build.srcDir.0}" />
+			</src>
+			<classpath refid="build.classpath" />
+			 <classpath refid="junit.class.path" />
+		</javac>
+	</target>
+	 <target name="compile-junit" description="Compile the test code">
+	        <mkdir dir="${test.report.dir}" />
+	        <mkdir dir="${build.test.dir}" />	
+		<javac destdir="${build.test.dir}"
+		nowarn="false"
+		debug="true"
+		optimize="false"
+		deprecation="true"
+		target="1.6"
+		verbose="false"
+		fork="false"
+		source="1.6"
+		includeantruntime="false"
+		encoding="UTF-8">
+		<compilerarg value="-Xlint" />
+		<src>
+		<pathelement location="${test.dir}" />
+		<pathelement location="${build.testResourceDir.0}"/> 
+		</src>
+		<classpath refid="build.classpath" />
+		<classpath refid="junit.class.path" />
+		</javac>
+		<copy todir="${build.test.dir}">
+		<fileset dir="${test.dir}">
+		<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	</target>
+	
+	<!-- Cobertura instrumentation -->
+	<target name="cobertura">
+	<!-- delete the datafile if it is there from a previous run -->
+	<delete file="${basedir}/cobertura.ser" />
+	<cobertura-instrument todir="${instrumented.dir}">
+		<ignore regex="org.apache.log4j.*" />
+		<fileset dir="${build.dir}">
+		<include name="**/*.class" />
+		<exclude name="**/*Test.class" />
+		</fileset>
+	</cobertura-instrument>
+	</target>
+	<!-- Run the JUnit Tests -->
+	<target name="junit" depends="compile-junit,cobertura" description="Run the tests">
+	<junit printsummary="on" fork="true" haltonfailure="no" showoutput="true">
+	<sysproperty key="net.sourceforge.cobertura.datafile"
+			file="${basedir}/cobertura.ser" />
+	<classpath location="${instrumented.dir}" />
+	<classpath refid="build.classpath" />
+	<classpath refid="junit.class.path" /> 
+	<classpath>
+		<pathelement location="${build.test.dir}"/>
+		<pathelement location="${build.testResourceDir.0}"/> 
+	</classpath>
+	<classpath refid="cobertura.classpath" />
+	<formatter type="xml" />
+	<batchtest todir="${test.report.dir}">
+	<fileset dir="${test.dir}">
+	<include name="**/*Test*.java" /> 
+	</fileset>
+	</batchtest>
+	</junit>
+	       <!-- <junitreport todir="${test.report.dir}">
+	        <fileset dir="${test.report.dir}">
+	        <include name="TEST-*.xml"/>
+	        </fileset>
+	        <report format="frames" todir="${test.report.dir}"/>
+	        </junitreport>
+	        <cobertura-report format="xml" destdir="${coveragereport.dir}" srcdir="${build.srcDir.0}" />
+	        <cobertura-report format="html" destdir="${coveragereport.dir}/html" srcdir="${build.srcDir.0}" /> -->
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Javadoc target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="javadoc" description="Generates the Javadoc of the application">
+		<javadoc sourcepath="${build.srcDir.0}"
+		         packagenames="*"
+		         destdir="${reporting.outputDirectory}/apidocs"
+		         access="protected"
+		         old="false"
+		         verbose="false"
+		         version="true"
+		         use="true"
+		         author="true"
+		         splitindex="false"
+		         nodeprecated="false"
+		         nodeprecatedlist="false"
+		         notree="false"
+		         noindex="false"
+		         nohelp="false"
+		         nonavbar="false"
+		         serialwarn="false"
+		         charset="ISO-8859-1"
+		         linksource="false"
+		         breakiterator="false" />
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- Package target                                                         -->
+	<!-- ====================================================================== -->
+
+	<target name="all" depends="compile" description="Package the application">
+		<jar jarfile="${build.dir}/${build.finalName.impl}.jar"
+		     compress="true"
+		     index="false"
+		     basedir="${build.outputDir}"
+		     excludes="**/package.html">
+			<fileset dir="${build.resourceDir.0}" includes="anite-impl-spring.xml" />
+			<fileset dir="${build.resourceDir.0}" includes="anite-impl-spring.properties" />
+			<fileset dir="${build.testResourceDir.0}/aniteResponses" includes="*.xml"/>
+		</jar>
+	</target>
+
+	<!-- ====================================================================== -->
+	<!-- A dummy target for the package named after the type it creates         -->
+	<!-- ====================================================================== -->
+
+	<target name="jar" depends="all" description="Builds the jar for the application" />
+
+</project>
